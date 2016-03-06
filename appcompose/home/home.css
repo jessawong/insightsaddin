@@ -1,0 +1,93 @@
+/* Page-specific styling */
+
+#details {
+    margin-left: 15px;
+}
+
+    #details th {
+        text-align: left;
+        padding-right: 10px;
+    }
+
+.onHover {
+    cursor: pointer;
+    border-color: red;
+    color: #336699;
+}
+
+    #from:focus, #from:hover, #from:active {
+        color: #4ea2df;
+    }
+
+.headPad {
+    padding-bottom: 5px;
+}
+
+#postEngage {
+    min-width: 288px;
+    min-height: 100px;
+}
+
+#submission {
+    background-color: gray;
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+    vertical-align: bottom;
+    display: none;
+}
+
+.boxes {
+    float: right;
+}
+
+.clearRight {
+    clear:right;
+    padding: 5px;
+}
+
+.clearLeft {
+    clear:left;
+    margin-top: 5px;
+}
+
+.left, .headPad {
+    float:left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.resourceButton {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    clear:right;
+}
+
+.center {
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+#align {
+    padding-left: 3px;
+}
+
+.valign {
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.resourceFont {
+    font-size: 12px;
+}
+
+#error {
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    vertical-align: bottom;
+}
