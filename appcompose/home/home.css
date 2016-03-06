@@ -45,6 +45,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
     padding-right: 5px;
+    text-align: center;
     background-color: #3B3178;
     font-family: sans-serif;
     color: white;
@@ -90,7 +91,7 @@
 }
 
 .resourceFont {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 #error {
