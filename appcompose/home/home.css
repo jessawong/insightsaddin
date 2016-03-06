@@ -41,6 +41,14 @@
     float: right;
 }
 
+#background {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #AAAAFF,
+    font-family: sans-serif;
+    color: white;
+}
+
 .clearRight {
     clear:right;
     padding: 5px;
