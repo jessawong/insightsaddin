@@ -17,9 +17,6 @@
       $(".resourceButton").hover(function() {
         $(this).toggleClass("onHover");
       });
-      $(".resourceButton").click(function () {
-        $(this).addClass("ms-u-scaleUpOut103");
-      });
     });
   };
 
@@ -59,9 +56,14 @@
         this.setEngage = function(engageChoice) {
           this.information["Engagement"] = engageChoice;
         };
+
+        this.goHome() {
+          this.showTech = true;
+        }
     });
 
     function showStatus() {
+      $("#form").hide();
       $("#submission").show();
     }
 
