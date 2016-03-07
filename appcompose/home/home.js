@@ -57,9 +57,9 @@
           this.information["Engagement"] = engageChoice;
         };
 
-        this.goHome() {
+        this.goHome = function() {
           this.showTech = true;
-        }
+        };
     });
 
     function showStatus() {
