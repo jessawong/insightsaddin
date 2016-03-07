@@ -29,12 +29,10 @@
 }
 
 #submission {
-    background-color: gray;
     margin-top: 20px;
     padding: 20px;
-    color: white;
-    vertical-align: bottom;
     display: none;
+    font-size: 15px;
 }
 
 .boxes {
@@ -111,8 +109,6 @@
 
 #error {
     display: none;
-    background-color: red;
-    color: white;
     padding: 20px;
-    vertical-align: bottom;
+    font-size: 15px;
 }
