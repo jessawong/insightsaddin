@@ -24,7 +24,7 @@
 }
 
 #postEngage {
-    min-width: 288px;
+   /* min-width: 288px;*/
     min-height: 100px;
 }
 
@@ -54,6 +54,10 @@
     font-size: 18px;
     font-family: sans-serif;
     color: gray;
+}
+
+#mainContent {
+    padding: 3px;
 }
 
 .clearRight {
