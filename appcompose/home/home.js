@@ -15,8 +15,10 @@
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
       $(".resourceButton").hover(function() {
-        $(this).toggleClass("ms-u-scaleUpOut103");
-
+        $(this).toggleClass("onHover");
+      });
+      $(".resourceButton").click(function () {
+        $(this).addClass("ms-u-scaleUpOut103");
       });
     });
   };
