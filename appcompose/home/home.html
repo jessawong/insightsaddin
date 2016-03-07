@@ -8,7 +8,7 @@
   <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
   <link href="../../bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" type="text/css" />
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-  <!--<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">-->
+  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 
@@ -30,51 +30,73 @@
 <body ng-app="readHome" ng-controller="FormController as formCtrl">
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background">
-      <span class="resourceFont">Which technology area do you need help with?</span>
+      <span class="ms-font-l">Which technology area do you need help with?</span>
     </div>
     <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">
-      <img class="valign" ng-src="{{tech.url}}"/><span class="resourceFont">{{tech.type}}</span>
+      <img class="valign" ng-src="{{tech.url}}"/><span class="ms-fontWeight-semilight ms-u-scaleUpOut103">{{tech.type}}</span>
     </div>
     <!--<button class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">{{tech}}</button>-->
 
   </div>
   <form class="center" ng-show="!formCtrl.showTech" ng-submit="formCtrl.addRequest()">
     <h2 class="align">{{formCtrl.information.Technology}}</h2>
-    <div>
-      <div class="clearRight">
-        <span class="left">Requestor:</span><input class="boxes" type="text" required id="pbeName" ng-model="formCtrl.information.pbe"></input>
+    <div class="ms-Grid">
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" required id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
       </div>
-      <div class="clearRight">
-        <span class="left">Product's Website:</span><input class="boxes" required type="text" ng-model="formCtrl.information.website"></input>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input required type="text" ng-model="formCtrl.information.website"></input></div>
       </div>
-      <div class="clearRight">
-        <span class="left">Engagement Requested:</span>
-        <select class="boxes" ng-model="formCtrl.information.engagement">
-          <option ng-repeat="engage in formCtrl.engagement" ng-click="formCtrl.setEngage(engage)">{{engage}}</option>
-        </select>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+          <select ng-model="formCtrl.information.engagement">
+            <option ng-repeat="engage in formCtrl.engagement" ng-click="formCtrl.setEngage(engage)">{{engage}}</option>
+          </select>
+        </div>
       </div>
-      <div class="clearRight">
-        <span class="left">Requested Date for Engagement:</span><br/><input type="date" required class="boxes" ng-model="formCtrl.information.date"></input><br/>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+          <input type="date" required ng-model="formCtrl.information.date"></input>
+        </div>
       </div>
-      <br/>
-      <div><span class="left">Why does this partner want to be a part of {{formCtrl.information.Technology}}?</span> <br/>
-        <textarea class="boxes" required id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Why does this partner want to be a part of {{formCtrl.information.Technology}}?</div>
       </div>
-      <div class="clearRight">
-        <span class="left">Duration of meeting:</span><input type="text" required class="boxes" ng-model="formCtrl.information.time"></input><br/>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+          <textarea required id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+        </div>
       </div>
-      <div class="clearRight">
-        <span class="left">Location of partner:</span><input type="text" required class="boxes" ng-model="formCtrl.information.location"></input><br/>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+          <input type="text" required ng-model="formCtrl.information.time"></input>
+        </div>
       </div>
-      <div class="clearRight">
-        <input type="checkbox" checked="checked" ng-click="formCtrl.canSkype()"></input> Skype meeting acceptable
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of partner:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+          <input type="text" required ng-model="formCtrl.information.location"></input>
+        </div>
       </div>
-      <div class="clearRight" ng-show="formCtrl.skype">
-        <span class="left">Location of meeting:</span><input type="text" class="boxes" ng-model="formCtrl.information.meeting"></input>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+          <input type="checkbox" checked="checked" ng-click="formCtrl.canSkype()"></input> Skype meeting acceptable
+        </div>
       </div>
-    </div><br/>
-    <button class="clearLeft" ng-click="formCtrl.goBack()">Go Back</button>
-    <button class="clearLeft" type="submit">Submit</button>
+      <div class="ms-Grid-row" ng-show="formCtrl.skype">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of meeting:</div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+          <input type="text" class="boxes" ng-model="formCtrl.information.meeting"></input>
+        </div>
+      </div>
+    </div>
+    <button class="clearLeft ms-Button" ng-click="formCtrl.goBack()">Go Back</button>
+    <button class="clearLeft ms-Button" type="submit">Submit</button>
   </form>
   <div id="submission">Successfully submitted. Please hit "send" and someone from the v-team will get back to you within 24 hours.</div>
   <div id="error">There was a problem processing your request. Try again.</div>
