@@ -41,6 +41,11 @@
     float: right;
 }
 
+.ms-Grid-row {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
 #background {
     margin-left: 0px;
     margin-right: 0px;
