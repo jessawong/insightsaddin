@@ -31,12 +31,10 @@
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background">
       <img src="../../images/header.png"></img>
-      <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">
-        <img class="valign" ng-src="{{tech.url}}"></img>
+      <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-class="{office: tech.type==='Productivity', apps: tech.type==='Modern Apps', cloud: tech.type==='Intelligent Cloud'}" ng-click="formCtrl.setTech(tech)">
+        <img class="valign" ng-src="{{tech.fadeUrl}}"></img>
       </div>
-      <!--<span class="ms-font-m-plus">Which technology area do you need help with?</span>-->
     </div>
-    <!--<button class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">{{tech}}</button>-->
 
   </div>
   <div id="mainContent">
