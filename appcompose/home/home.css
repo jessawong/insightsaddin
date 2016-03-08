@@ -70,7 +70,7 @@
     width: 100%;
     max-width: 290px;
     overflow: hidden;
-    padding: 3px;
+    padding-right: 0px;
 }
 
 .clearRight {
