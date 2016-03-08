@@ -2,9 +2,9 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var selectTech = [{'type': 'Productivity','url':'../../images/Productivity.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com'}, 
-                    {'type':'Modern Apps','url':'../../images/w10.jpg', 'alias': 'US_DX_RISV_APPS@microsoft.com'}, 
-                    {'type':'Intelligent Cloud', 'url':'../../images/azure.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com'}];
+  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com'}, 
+                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com'}, 
+                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com'}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
   var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':''};
 
