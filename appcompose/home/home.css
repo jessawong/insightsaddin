@@ -53,6 +53,17 @@
     vertical-align: middle;
 }
 
+.opacity {
+    opacity: 0.6;
+    vertical-align: middle;
+    font-size: 17px;
+    color: white;
+}
+
+.text {
+    opacity: 0;
+}
+
 #mainContent {
     max-width: 292px;
     padding: 3px;

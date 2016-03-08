@@ -15,7 +15,7 @@
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
       $(".resourceButton").hover(function() {
-        $(this).toggleClass("ms-u-fadeIn100");
+        $(this).toggleClass("opacity");
       });
     });
   };

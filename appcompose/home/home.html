@@ -32,7 +32,7 @@
     <div id="background">
       <img src="../../images/header.png"></img>
       <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">
-        <img class="valign" ng-src="{{tech.url}}"></img>
+        <img class="valign" ng-src="{{tech.url}}"></img><span class="text">{{tech.type}}</span>
       </div>
       <!--<span class="ms-font-m-plus">Which technology area do you need help with?</span>-->
     </div>
