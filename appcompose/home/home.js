@@ -2,9 +2,9 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png'}, 
-                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png'}, 
-                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png'}];
+  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png', 'prod': true}, 
+                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
+                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
   var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':''};
 
