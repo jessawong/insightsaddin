@@ -30,15 +30,15 @@
 <body ng-app="readHome" ng-controller="FormController as formCtrl">
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background">
-      <img src="../../images/header.png"></img>
-      <div class="resourceButton" style="background-image: url(../../images/office.png);">
-        <img class="fade" src="../../images/officeOverlay.png"></img>
+      <img src="../../images/header.png"/>
+      <div class="resourceButton" style="background-image: url(../../images/office.png);" ng-click="formCtrl.setTech(Productivity)">
+        <img class="fade" src="../../images/officeOverlay.png"/>
       </div>      
-      <div class="resourceButton" style="background-image: url(../../images/windows.png);">
-        <img class="fade" src="../../images/modernOverlay.png"></img>
+      <div class="resourceButton" style="background-image: url(../../images/windows.png);" ng-click="formCtrl.setTech(Modern Apps)">
+        <img class="fade" src="../../images/modernOverlay.png"/>
       </div>
-      <div class="resourceButton" style="background-image: url(../../images/cloud.png);">
-        <img class="fade" src="../../images/cloudOverlay.png"></img>
+      <div class="resourceButton" style="background-image: url(../../images/cloud.png);" ng-click="formCtrl.setTech(Intelligent Cloud)">
+        <img class="fade" src="../../images/cloudOverlay.png"/>
       </div>
       <!--<span class="ms-font-m-plus">Which technology area do you need help with?</span>-->
     </div>
