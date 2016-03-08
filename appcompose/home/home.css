@@ -36,6 +36,18 @@
     font-size: 15px;
 }
 
+.office {
+    background: url(../../images/officeOverlay.png);
+}
+
+.apps {
+    background: url(../../images/modernOverlay.png);
+}
+
+.cloud {
+    background: url(../../images/cloudOverlay.png);
+}
+
 .boxes {
     float: right;
 }
@@ -107,6 +119,7 @@
 .valign {
     margin-left: 0px;
     margin-bottom: 1px;
+    display: none;
 }
 
 .fade {
