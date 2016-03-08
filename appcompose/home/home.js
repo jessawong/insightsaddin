@@ -6,7 +6,7 @@
                     {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
                     {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
-  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':''};
+  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': ''};
 
 
     // The Office initialize function must be run each time a new page is loaded
@@ -43,11 +43,11 @@
         };
 
         this.addRequest = function() {
-          Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>Engagement Requested: </h4>" 
-                                                      + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date
-                                                      + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" + this.information.time
-                                                      + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" + this.information.meeting, 
-                                                      {coercionType: "html"});
+          Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
+                                                      + "<br/><h4>Engagement Requested: </h4>" + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" 
+                                                      + this.information.date + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
+                                                      + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
+                                                      + this.information.meeting, {coercionType: "html"});
           reset();
           showStatus();
           this.information = info;
