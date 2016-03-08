@@ -30,7 +30,8 @@
 <body ng-app="readHome" ng-controller="FormController as formCtrl">
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background">
-      <span class="ms-font-m-plus">Which technology area do you need help with?</span>
+      <img src="../../images/header.png"></img>
+      <!--<span class="ms-font-m-plus">Which technology area do you need help with?</span>-->
     </div>
     <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">
       <img class="valign" ng-src="{{tech.url}}"/><span class="ms-fontWeight-semilight">{{tech.type}}</span>

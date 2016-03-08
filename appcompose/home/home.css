@@ -48,19 +48,14 @@
     margin-left: 0px;
     margin-right: 0px;
     min-height: 50px;
-    padding-top: 8px;
-    padding-bottom: 8px;
     padding-right: 5px;
     text-align: center;
     vertical-align: middle;
-    line-height: 50px;
-    font-size: 18px;
-    font-family: sans-serif;
-    color: gray;
+    max-width: 292px;
 }
 
 #mainContent {
-    max-width: 295px;
+    max-width: 292px;
     padding: 3px;
 }
 
