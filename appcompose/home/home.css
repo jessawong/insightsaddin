@@ -68,6 +68,7 @@
 
 #content-main, #mainContent {
     width: 100%;
+    max-width: 292px;
     overflow: hidden;
     padding: 3px;
 }
