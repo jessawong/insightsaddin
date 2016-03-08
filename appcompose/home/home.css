@@ -24,7 +24,7 @@
 }
 
 #postEngage {
-    min-width: 288px;
+    width: 100%;
     min-height: 100px;
 }
 
@@ -66,7 +66,7 @@
 }
 
 #mainContent {
-    max-width: 292px;
+    width: 100%;
     padding: 3px;
 }
 
