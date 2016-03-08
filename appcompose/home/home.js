@@ -2,9 +2,9 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com'}, 
-                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com'}, 
-                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com'}];
+  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png'}, 
+                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png'}, 
+                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png'}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
   var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':''};
 
@@ -14,8 +14,11 @@
     jQuery(document).ready(function(){
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
-      $(".resourceButton").hover(function() {
-        $(this).toggleClass("opacity");
+      $(".valign").hover(function() {
+        $(this).stop().animate({"opacity":"0"}, "slow");
+      },
+      function() {
+        $(this).stop().animate({"opacity":"1"}, "slow");
       });
     });
   };

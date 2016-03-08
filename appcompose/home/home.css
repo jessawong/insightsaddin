@@ -58,6 +58,7 @@
     vertical-align: middle;
     font-size: 17px;
     color: white;
+    font-family: "Calibri";
 }
 
 .text {
@@ -86,6 +87,7 @@
 }
 
 .resourceButton {
+    position: relative;
     text-align: center;
     margin-right: 0px;
     margin-bottom: 1px;
@@ -104,6 +106,16 @@
 .valign {
     margin-left: 0px;
     margin-bottom: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.fade {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .resourceFont {
