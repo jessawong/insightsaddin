@@ -66,7 +66,7 @@
     opacity: 0;
 }
 
-#content-main, #mainContent {
+#content-main, #mainContent, #form {
     width: 100%;
     max-width: 290px;
     overflow: hidden;
