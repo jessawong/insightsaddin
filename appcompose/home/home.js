@@ -15,10 +15,10 @@
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
       $(".valign").hover(function() {
-        $(this).stop().animate({"opacity":"0"}, "slow");
+        $(this).stop().animate({"opacity":"0.5"}, "slow");
       },
       function() {
-        $(this).stop().animate({"opacity":"0.5"}, "slow");
+        $(this).stop().animate({"opacity":"1"}, "slow");
       });
     });
   };
