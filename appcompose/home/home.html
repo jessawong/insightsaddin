@@ -31,8 +31,8 @@
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background">
       <img src="../../images/header.png"></img>
-      <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-class="{office: tech.prod, apps: tech.modern, cloud: tech.intel}" ng-click="formCtrl.setTech(tech)">
-        <img class="valign" ng-src="{{tech.fadeUrl}}"></img>
+      <div class="resourceButton" ng-repeat="tech in formCtrl.technology" ng-click="formCtrl.setTech(tech)">
+        <img class="valign" ng-src="{{tech.url}}"></img>
       </div>
     </div>
 
