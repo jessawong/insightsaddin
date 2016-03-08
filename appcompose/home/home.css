@@ -66,10 +66,10 @@
     opacity: 0;
 }
 
-#content-main, #mainContent, #form {
+#main {
     max-width: 290px;
     overflow: hidden;
-    padding-right: 0px;
+    padding: 3px;
 }
 
 .clearRight {
