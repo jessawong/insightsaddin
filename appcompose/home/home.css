@@ -76,6 +76,7 @@
 
 .resourceButton {
     text-align: center;
+    margin-right: 0px;
     margin-bottom: 1px;
     clear:right;
 }
@@ -90,7 +91,8 @@
 }
 
 .valign {
-    margin: 1px;
+    margin-left: 0px;
+    margin-bottom: 1px;
 }
 
 .resourceFont {
