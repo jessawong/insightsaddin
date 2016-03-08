@@ -67,7 +67,6 @@
 }
 
 #content-main, #mainContent, #form {
-    width: 100%;
     max-width: 290px;
     overflow: hidden;
     padding-right: 0px;
