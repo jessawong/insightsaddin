@@ -14,11 +14,11 @@
     jQuery(document).ready(function(){
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
-      $(".valign").hover(function() {
-        $(this).stop().animate({"opacity":"0"}, "slow");
+      $(".fade").hover(function() {
+        $(this).stop().animate({"opacity":"1"}, "slow");
       },
       function() {
-        $(this).stop().animate({"opacity":"1"}, "slow");
+        $(this).stop().animate({"opacity":"0"}, "slow");
       });
     });
   };
