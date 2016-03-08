@@ -25,6 +25,7 @@
 
 #postEngage {
     width: 100%;
+    overflow: hidden;
     min-height: 100px;
 }
 
@@ -67,6 +68,7 @@
 
 #mainContent {
     width: 100%;
+    overflow: hidden;
     padding: 3px;
 }
 
