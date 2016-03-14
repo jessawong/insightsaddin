@@ -67,7 +67,9 @@
             <!-- [if IE]>
               <input type="text" ng-model="formCtrl.information.date"></input>
             <![endif]-->
-            <input type="date" ng-model="formCtrl.information.date"></input>
+            <![if !IE]>
+              <input type="date" ng-model="formCtrl.information.date"></input>
+            <![endif]>
           </div>
         </div>
         <div class="ms-Grid-row">
