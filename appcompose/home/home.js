@@ -29,6 +29,7 @@
         this.engagement = engageType;
         this.showTech = true;
         this.information = info;
+        this.timeOptions = time;
         this.skype = false;
         this.ads = false;
         this.goBack = function() {
