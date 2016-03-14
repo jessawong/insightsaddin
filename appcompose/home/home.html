@@ -79,8 +79,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="formCtrl.information.time">
-              <option ng-show="formCtrl.isAds()">2+ hours</option>
-              <option ng-repeat="time in formCtrl.timeOptions" ng-click="formCtrl.setTime(time)" ng-show="!formCtrl.isAds()">{{time}}</option>
+              <option ng-repeat="time in formCtrl.timeOptions" ng-click="formCtrl.setTime(time)">{{time}}</option>
             </select>
           </div>
         </div>

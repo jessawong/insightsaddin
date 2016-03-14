@@ -7,7 +7,7 @@
                     {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
   var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': ''};
-  var time = ['30 min', '60 min', '90 min', '120 min'];
+  var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
 
 
     // The Office initialize function must be run each time a new page is loaded
@@ -61,15 +61,7 @@
         };
         this.setEngage = function(engageChoice) {
           this.information["engagement"] = engageChoice;
-          if (engageChoice === "ADS") {]
-            this.information["time"] = "2+ hours";
-            this.ads = true;
-          }
         };
-
-        this.isAds = function() {
-          return this.ads;
-        }
 
         this.setTime = function(option) {
           this.information["time"] = option;
