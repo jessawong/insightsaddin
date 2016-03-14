@@ -82,7 +82,6 @@
               <option ng-show="formCtrl.isAds()">2+ hours</option>
               <option ng-repeat="time in formCtrl.timeOptions" ng-click="formCtrl.setTime(time)" ng-show="!formCtrl.isAds()">{{time}}</option>
             </select>
-            <input type="text" required ng-model="formCtrl.information.time"></input>
           </div>
         </div>
         <div class="ms-Grid-row">
