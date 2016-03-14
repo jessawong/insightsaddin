@@ -62,13 +62,6 @@
         this.canSkype = function() {
           this.skype = !this.skype;
         };
-        this.setEngage = function(engageChoice) {
-          this.information["engagement"] = engageChoice;
-        };
-
-        this.setTime = function(option) {
-          this.information["time"] = option;
-        }
 
         this.goHome = function() {
           this.showTech = true;

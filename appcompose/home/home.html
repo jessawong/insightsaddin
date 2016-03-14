@@ -39,6 +39,7 @@
 
   </div>
   <div id="mainContent">
+    <<i class="ms-Icon ms-Icon--mail" ng-click="formCtrl.goBack()" aria-hidden="true">Back</i>
     <form id="form" class="center" ng-show="!formCtrl.showTech" ng-submit="formCtrl.addRequest()">
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
       <div class="ms-Grid">
@@ -66,7 +67,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="formCtrl.information.engagement">
-              <option ng-repeat="engage in formCtrl.engagement" ng-click="formCtrl.setEngage(engage)">{{engage}}</option>
+              <option ng-repeat="engage in formCtrl.engagement">{{engage}}</option>
             </select>
           </div>
         </div>
@@ -88,7 +89,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="formCtrl.information.time">
-              <option ng-repeat="time in formCtrl.timeOptions" ng-click="formCtrl.setTime(time)">{{time}}</option>
+              <option ng-repeat="time in formCtrl.timeOptions">{{time}}</option>
             </select>
           </div>
         </div>
@@ -110,7 +111,6 @@
           </div>
         </div>
       </div>
-      <button class="clearLeft ms-Button" ng-click="formCtrl.goBack()">Go Back</button>
       <button class="clearLeft ms-Button" type="submit">Submit</button>
     </form>
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
