@@ -79,7 +79,7 @@
 }
 
 #main {
-    margin-left: 0px;
+    margin: 10px;
     /*max-width: 277px;*/
     width: 100%;
     overflow: hidden;
