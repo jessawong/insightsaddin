@@ -19,6 +19,10 @@
         color: #4ea2df;
     }
 
+.iconSize {
+    font-size: 12px;
+}
+
 #postEngage {
     width: 100%;
     overflow: hidden;
