@@ -78,6 +78,10 @@
     opacity: 0;
 }
 
+#ms-Grid-row {
+    margin-bottom: 5px;
+}
+
 #main {
     margin: 0px;
     max-width: 250px;
