@@ -80,8 +80,8 @@
 
 #main {
     margin: 10px;
-    /*max-width: 277px;*/
-    width: 100%;
+    max-width: 250px;
+    /*width: 100%;*/
     overflow: hidden;
     padding: 3px;
 }
