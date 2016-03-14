@@ -21,17 +21,6 @@
       function() {
         $(this).stop().animate({"opacity":"1"}, "slow");
       });
-        // Check if the browser supports the date input type
-      if (!Modernizr.inputtypes.date){
-          // Add the jQuery UI DatePicker to all
-          // input tags that have their type attributes
-          // set to 'date'
-          $('input[type=date]').datepicker({
-              // specify the same format as the spec
-              dateFormat: 'mm-dd-yyyy'
-          });
-      }
-
     });
   };
 
