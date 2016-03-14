@@ -1,18 +1,6 @@
 (function(){
   'use strict';
 
-  // Check if the browser supports the date input type
-    if (!Modernizr.inputtypes.date){
-        // Add the jQuery UI DatePicker to all
-        // input tags that have their type attributes
-        // set to 'date'
-        $('input[type=date]').datepicker({
-            // specify the same format as the spec
-            dateFormat: 'mm-dd-yyyy'
-        });
-    }
-
-
   var app = angular.module('readHome', []);
   var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png', 'prod': true}, 
                     {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
@@ -33,6 +21,17 @@
       function() {
         $(this).stop().animate({"opacity":"1"}, "slow");
       });
+        // Check if the browser supports the date input type
+      if (!Modernizr.inputtypes.date){
+          // Add the jQuery UI DatePicker to all
+          // input tags that have their type attributes
+          // set to 'date'
+          $('input[type=date]').datepicker({
+              // specify the same format as the spec
+              dateFormat: 'mm-dd-yyyy'
+          });
+      }
+
     });
   };
 
