@@ -11,6 +11,7 @@
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr.js"></script>
 
   <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
   <!-- <script src="../../bower_components/jquery/jquery.min.js"></script>  -->
@@ -64,12 +65,7 @@
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <!-- [if IE]>
-              <input type="text" ng-model="formCtrl.information.date"></input>
-            <![endif]-->
-            <![if !IE]>
               <input type="date" ng-model="formCtrl.information.date"></input>
-            <![endif]>
           </div>
         </div>
         <div class="ms-Grid-row">
