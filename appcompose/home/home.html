@@ -43,11 +43,11 @@
       <div class="ms-Grid">
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" required id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input required type="text" ng-model="formCtrl.information.website"></input></div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.website"></input></div>
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">CRM Link:</div>
@@ -64,7 +64,7 @@
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <input type="date" required ng-model="formCtrl.information.date"></input>
+            <input type="date" ng-model="formCtrl.information.date"></input>
           </div>
         </div>
         <div class="ms-Grid-row">
@@ -72,7 +72,7 @@
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <textarea required id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+            <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
           </div>
         </div>
         <div class="ms-Grid-row">
@@ -86,7 +86,7 @@
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of partner:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <input type="text" required ng-model="formCtrl.information.location"></input>
+            <input type="text" ng-model="formCtrl.information.location"></input>
           </div>
         </div>
         <div class="ms-Grid-row">
@@ -97,7 +97,7 @@
         <div class="ms-Grid-row" ng-show="formCtrl.skype">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of meeting:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <input type="text" class="boxes" ng-model="formCtrl.information.meeting"></input>
+            <input type="text" ng-model="formCtrl.information.meeting"></input>
           </div>
         </div>
       </div>
