@@ -6,7 +6,8 @@
                     {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
                     {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
-  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': ''};
+  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
+  var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
   var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
 
 
@@ -32,6 +33,7 @@
         this.timeOptions = time;
         this.skype = false;
         this.ads = false;
+        this.stage = crmStage;
         this.goBack = function() {
           this.skype = false;
           this.showTech = true;
