@@ -36,7 +36,6 @@
           this.skype = false;
           this.showTech = true;
           hideStatus();
-          Office.context.mailbox.item.body.setAsync("", {coercionType: "html"});
           this.information["Technology"] = "";
         };
         this.setTech = function(option) {
