@@ -68,7 +68,7 @@
         }
 
         this.goHome = function() {
-          this.showTech = true;
+          hideStatus();
         };
     });
 
@@ -78,6 +78,7 @@
     }
 
     function hideStatus() {
+      $("#form").show();
       $("#submission").hide();
     }
 
