@@ -48,7 +48,7 @@
         };
 
         this.addRequest = function() {
-          Office.context.mailbox.item.body.setAsync("<h5>Product's Website: </h5>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
+          Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
                                                       + "<br/><h4>Stage:</h4>" + this.information.stage + "<br/><h4>Engagement Requested: </h4>" 
                                                       + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
