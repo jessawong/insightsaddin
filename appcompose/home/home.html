@@ -112,44 +112,44 @@
             </div>
           </div>
         </div>
-        <div ng-show="formCtrl.intelCloud" ng-click="formCtrl.cont()" id="cont">
-          <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl" aria-hidden="true"></i>
-        </div>
-        <div ng-show="formCtrl.showCont">
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Industry/Vertical:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <input type="text" ng-model="formCtrl.cloudInfor.industry"></input>
-            </div>
+      </div>
+      <div ng-show="formCtrl.intelCloud" ng-click="formCtrl.cont()" id="cont">
+        <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl" aria-hidden="true"></i>
+      </div>
+      <div class="ms-Grid" ng-show="formCtrl.showCont">
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Industry/Vertical:</div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+            <input type="text" ng-model="formCtrl.cloudInfor.industry"></input>
           </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Status:</div>
-            <select ng-model="formCtrl.cloudInfor.status">
-              <option ng-repeat="status in formCtrl.cloudStatus">{{status}}</option>
+        </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Status:</div>
+          <select ng-model="formCtrl.cloudInfor.status">
+            <option ng-repeat="status in formCtrl.cloudStatus">{{status}}</option>
+          </select>
+        </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Provider:</div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+            <select ng-model="formCtrl.cloudInfor.provider">
+              <option ng-repeat="prov in formCtrl.cloudProv">{{prov}}</option>
             </select>
           </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Provider:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <select ng-model="formCtrl.cloudInfor.provider">
-                <option ng-repeat="prov in formCtrl.cloudProv">{{prov}}</option>
-              </select>
-            </div>
+        </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Annual Consumption:</div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+            <select ng-model="formCtrl.cloudInfor.consumption">
+              <option ng-repeat="rate in formCtrl.consumption">{{rate}}</option>
+            </select>
           </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Annual Consumption:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <select ng-model="formCtrl.cloudInfor.consumption">
-                <option ng-repeat="rate in formCtrl.consumption">{{rate}}</option>
-              </select>
-            </div>
-          </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Workloads:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <div ng-repeat="work in formCtrl.workloads">
-                <input type="checkbox" ng-repeat="(key, value) in work" ng-model="formCtrl.workloads[key]"/>{{key}}
-              </div>
+        </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Workloads:</div>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+            <div ng-repeat="work in formCtrl.workloads">
+              <input type="checkbox" ng-repeat="(key, value) in work" ng-model="formCtrl.workloads[key]"/>{{key}}
             </div>
           </div>
         </div>
