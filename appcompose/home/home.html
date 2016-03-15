@@ -110,7 +110,9 @@
             <input type="text" ng-model="formCtrl.information.meeting"></input>
           </div>
         </div>
-        <i ng-show="formCtrl.intelCloud" class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xl" aria-hidden="true" ng-click="formCtrl.cont()"></i>
+        <div ng-show="formCtrl.intelCloud" ng-click="formCtrl.cont()" id="cont">
+          <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl" aria-hidden="true"></i>
+        </div>
         <div ng-show="formCtrl.showCont">
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Industry/Vertical:</div>

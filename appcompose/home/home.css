@@ -85,6 +85,10 @@
     margin-top: 5px;
 }
 
+#cont {
+    float:right;
+}
+
 .resourceButton {
     text-align: center;
     margin-top: 5px;
