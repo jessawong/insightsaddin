@@ -91,9 +91,9 @@
             cloudDetails = "<br/><h4>Industry/Verticle: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
                             + "<br/><h4>Workloads: </h4>";
-            for (var work in this.workloads) {
-              if (work.value) {
-                cloudDetails += work.name + "<br/>";
+            for (var key in this.workloads) {
+              if (this.workloads[key]) {
+                cloudDetails += key + "<br/>";
               }
             }
           }
