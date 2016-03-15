@@ -53,6 +53,7 @@
         this.timeOptions = time;
         this.skype = false;
         this.intelCloud = false;
+        this.showArrow = false;
         this.showCont = false;
         this.ads = false;
         this.stage = crmStage;
@@ -63,6 +64,7 @@
           this.intelCloud = false;
           this.showCont = false;
           this.showMain = false;
+          this.showArray = false;
           hideStatus();
           this.information["Technology"] = "";
           reset();
@@ -75,12 +77,14 @@
           this.showMain = true;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
+            this.showArrow = true;
           }
         };
 
         this.cont = function() {
           this.showCont = true;
           this.showMain = false;
+          this.showArrow = false;
         };
 
         this.addRequest = function() {
@@ -116,6 +120,7 @@
           this.intelCloud = false;
           this.showCont = false;
           this.showMain = false;
+          this.showArrow = false;
           showForm();
           hideStatus();
         };
