@@ -149,9 +149,9 @@
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Workloads:</div>
         </div>
-        <div ng-repeat="work in formCtrl.workloads" class="ms-Grid=row">
+        <div ng-repeat="(key, value) in formCtrl.workloads" class="ms-Grid=row">
           <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <input type="checkbox" name="load" ng-click="formCtrl.setWork(work)">{{work.name}}
+            <input type="checkbox" name="load" ng-click="formCtrl.setWork(work)">{{key}}
           </div>
         </div>
       </div>
