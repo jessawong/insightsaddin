@@ -13,17 +13,9 @@
   var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
   var provider = ['Azure', 'AWS', 'Google', 'Other'];
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
-  var workLoads = [{'Compute': false}, 
-                    {'Web & Mobile': false},
-                    {'Data & Storage': false},
-                    {'Analytics': false},
-                    {'Internet of Things': false},
-                    {'Networking': false},
-                    {'Media & CDN': false},
-                    {'Hybrid Integration': false},
-                    {'Identity & Access Management': false},
-                    {'Dev Services': false},
-                    {'Management & Security': false}];
+  var workLoads = {'Compute': false, 'Web & Mobile': false,'Data & Storage': false, 'Analytics': false, 'Internet of Things': false,
+                    'Networking': false, 'Media & CDN': false, 'Hybrid Integration': false, 'Identity & Access Management': false,
+                    'Dev Services': false, 'Management & Security': false};
 
 
     // The Office initialize function must be run each time a new page is loaded
@@ -92,7 +84,7 @@
           if (this.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Verticle: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
-                            + "<br/><h4>Workdloads: </h4>";
+                            + "<br/><h4>Workloads: </h4>";
             for (var key in this.workloads) {
               if (this.workloads[key]) {
                 cloudDetails += key + "<br/>";
