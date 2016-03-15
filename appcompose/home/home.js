@@ -64,7 +64,7 @@
           reset();
         };
         this.setTech = function(option) {
-          console.log(this.information);
+          console.log(this.workloads);
           this.information["Technology"] = option.type;
           Office.context.mailbox.item.to.setAsync([option.alias]);
           this.showTech = false;
