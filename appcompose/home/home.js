@@ -75,6 +75,10 @@
           }
         };
 
+        this.setWork = function(option) {
+          option.value = !option.value;
+        };
+
         this.cont = function() {
           this.showCont = true;
           this.showMain = false;
