@@ -11,7 +11,6 @@
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="https://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr.js"></script>
 
   <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
   <!-- <script src="../../bower_components/jquery/jquery.min.js"></script>  -->
@@ -171,18 +170,4 @@
     </div>
   </div>
 </body>
-
-<script type="text/javascript">
-    // Check if the browser supports the date input type
-  if (!Modernizr.inputtypes.date){
-      // Add the jQuery UI DatePicker to all
-      // input tags that have their type attributes
-      // set to 'date'
-      $('input[type=date]').datepicker({
-          // specify the same format as the spec
-          dateFormat: 'mm-dd-yyyy'
-      });
-  }
-</script>
-
 </html>
