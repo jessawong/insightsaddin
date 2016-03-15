@@ -94,7 +94,7 @@
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
                             + "<br/><h4>Workdloads: </h4>";
             for (var key in this.workloads) {
-              if (this.workLoads[key]) {
+              if (this.workloads[key]) {
                 cloudDetails += key + "<br/>";
               }
             }
