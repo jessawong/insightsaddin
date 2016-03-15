@@ -50,6 +50,7 @@
         this.showArrow = false;
         this.showCont = false;
         this.ads = false;
+        this.showBack = false;
         this.stage = crmStage;
         this.showMain = false;
         this.goBack = function() {
@@ -59,6 +60,7 @@
           this.showCont = false;
           this.showMain = false;
           this.showArray = false;
+          this.showBack = false;
           hideStatus();
           this.information["Technology"] = "";
           reset();
@@ -69,6 +71,7 @@
           Office.context.mailbox.item.to.setAsync([option.alias]);
           this.showTech = false;
           this.showMain = true;
+          this.showBack = true;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
@@ -106,6 +109,7 @@
           reset();
           showStatus();
           this.information = info;
+          this.showBack = false;
           this.workloads = workLoads;
           this.skype = false;
         };
