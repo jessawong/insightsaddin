@@ -125,9 +125,11 @@
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Status:</div>
-          <select ng-model="formCtrl.cloudInfor.status">
-            <option ng-repeat="status in formCtrl.cloudStatus">{{status}}</option>
-          </select>
+          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+            <select ng-model="formCtrl.cloudInfor.status">
+              <option ng-repeat="status in formCtrl.cloudStatus">{{status}}</option>
+            </select>
+          </div>
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Provider:</div>
