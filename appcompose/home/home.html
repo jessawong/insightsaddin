@@ -42,72 +42,74 @@
     <i class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l">Back</span></i>
     <form id="form" class="center" ng-show="!formCtrl.showTech" ng-submit="formCtrl.addRequest()">
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
-      <div class="ms-Grid">
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.website"></input></div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">CRM Link:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.crm"></input></div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <select ng-model="formCtrl.information.stage">
-              <option ng-repeat="stage in formCtrl.stage">{{stage}}</option>
-            </select>
+      <div ng-show="!formCtrl.intelCloud">
+        <div class="ms-Grid">
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <select ng-model="formCtrl.information.engagement">
-              <option ng-repeat="engage in formCtrl.engagement">{{engage}}</option>
-            </select>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.website"></input></div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <input type="date" ng-model="formCtrl.information.date"></input>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">CRM Link:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.crm"></input></div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">What outcomes does the partner have in releasing their solution on our {{formCtrl.information.Technology}} platform?</div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="formCtrl.information.stage">
+                <option ng-repeat="stage in formCtrl.stage">{{stage}}</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <select ng-model="formCtrl.information.time">
-              <option ng-repeat="time in formCtrl.timeOptions">{{time}}</option>
-            </select>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="formCtrl.information.engagement">
+                <option ng-repeat="engage in formCtrl.engagement">{{engage}}</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of partner:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <input type="text" ng-model="formCtrl.information.location"></input>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+                <input type="date" ng-model="formCtrl.information.date"></input>
+            </div>
           </div>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <input type="checkbox" checked="checked" ng-click="formCtrl.canSkype()"></input> Skype meeting acceptable
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">What outcomes does the partner have in releasing their solution on our {{formCtrl.information.Technology}} platform?</div>
           </div>
-        </div>
-        <div class="ms-Grid-row" ng-show="formCtrl.skype">
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of meeting:</div>
-          <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-            <input type="text" ng-model="formCtrl.information.meeting"></input>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+              <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="formCtrl.information.time">
+                <option ng-repeat="time in formCtrl.timeOptions">{{time}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of partner:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <input type="text" ng-model="formCtrl.information.location"></input>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+              <input type="checkbox" checked="checked" ng-click="formCtrl.canSkype()"></input> Skype meeting acceptable
+            </div>
+          </div>
+          <div class="ms-Grid-row" ng-show="formCtrl.skype">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of meeting:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <input type="text" ng-model="formCtrl.information.meeting"></input>
+            </div>
           </div>
         </div>
         <div ng-show="formCtrl.intelCloud" ng-click="formCtrl.cont()" id="cont">
