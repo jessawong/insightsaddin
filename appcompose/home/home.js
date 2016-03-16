@@ -54,16 +54,22 @@
         this.stage = crmStage;
         this.showMain = false;
         this.goBack = function() {
-          this.skype = false;
-          this.showTech = true;
-          this.intelCloud = false;
-          this.showCont = false;
-          this.showMain = false;
-          this.showArray = false;
-          this.showBack = false;
-          hideStatus();
-          this.information["Technology"] = "";
-          reset();
+          if (this.showCont) {
+            this.showCont = false;
+            this.showMain = true;
+            this.showArrow = true;
+          } else {
+            this.skype = false;
+            this.showTech = true;
+            this.intelCloud = false;
+            this.showCont = false;
+            this.showMain = false;
+            this.showArray = false;
+            this.showBack = false;
+            hideStatus();
+            this.information["Technology"] = "";
+            reset();
+          }
         };
         this.setTech = function(option) {
           console.log(this.workloads);
