@@ -1,0 +1,16 @@
+{
+  "name": "insightsaddin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "appcompose/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-server": "^0.1.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}
