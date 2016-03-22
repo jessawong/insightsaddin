@@ -50,6 +50,7 @@
         this.showArrow = false;
         this.showCont = false;
         this.ads = false;
+        this.showSubmit = false;
         this.showBack = false;
         this.stage = crmStage;
         this.showMain = false;
@@ -70,6 +71,7 @@
             this.information["Technology"] = "";
             reset();
           }
+          this.showSubmit = false;
         };
         this.setTech = function(option) {
           console.log(this.workloads);
@@ -78,6 +80,7 @@
           this.showTech = false;
           this.showMain = true;
           this.showBack = true;
+          this.showSubmit = true;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
@@ -90,6 +93,7 @@
 
         this.cont = function() {
           this.showCont = true;
+          this.showSubmit = true;
           this.showMain = false;
           this.showArrow = false;
         };
