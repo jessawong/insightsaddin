@@ -76,16 +76,17 @@
         this.setTech = function(option) {
           console.log(this.workloads);
           this.information["Technology"] = option.type;
-          Office.context.mailbox.item.to.addAsync([option.alias]);
-          this.showTech = false;
-          this.showMain = true;
-          this.showBack = true;
-          this.showSubmit = true;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
             this.showSubmit = false;
+          } else {
+            this.showSubmit = true;
           }
+          Office.context.mailbox.item.to.addAsync([option.alias]);
+          this.showTech = false;
+          this.showMain = true;
+          this.showBack = true;
         };
 
         this.setWork = function(option) {
