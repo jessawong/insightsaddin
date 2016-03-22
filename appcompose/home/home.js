@@ -84,6 +84,7 @@
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
+            this.showSubmit = false;
           }
         };
 
