@@ -1,0 +1,8 @@
+.bowerrc/
+/bower.json
+/gulpfile.js
+/jsconfig.json
+/manifest.xsd
+/package.json
+/tsconfig.json
+/tsd.json
