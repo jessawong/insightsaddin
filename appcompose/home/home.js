@@ -67,6 +67,7 @@
             this.showMain = false;
             this.showArray = false;
             this.showBack = false;
+            this.showArrow = false;
             hideStatus();
             this.information["Technology"] = "";
             reset();
