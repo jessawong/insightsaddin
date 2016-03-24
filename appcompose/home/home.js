@@ -75,7 +75,7 @@
           this.showSubmit = false;
         };
         this.setTech = function(option) {
-          console.log(this.workloads);
+          console.log(this.information);
           this.information["Technology"] = option.type;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
