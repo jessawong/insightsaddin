@@ -49,6 +49,7 @@
 }
 
 #background {
+    background: url(../../images/header.png);
     margin-left: 0px;
     margin-right: 0px;
     min-height: 50px;
