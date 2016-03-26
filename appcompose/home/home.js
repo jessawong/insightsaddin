@@ -36,10 +36,10 @@
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
       $(".valign").hover(function() {
-        $(this).stop().animate({"opacity":"0.5"}, "fast");
+        $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
       function() {
-        $(this).stop().animate({"opacity":"1"}, "fast");
+        $(this).stop().animate({"opacity":"0.0"}, "fast");
       });
     });
   };
@@ -86,7 +86,7 @@
         };
         this.setTech = function(option) {
           console.log(this.information);
-          this.information["Technology"] = option.type;
+          this.information["Technology"] = this.technology[option].type;
           if (option.type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
@@ -94,7 +94,7 @@
           } else {
             this.showSubmit = true;
           }
-          Office.context.mailbox.item.to.addAsync([option.alias]);
+          Office.context.mailbox.item.to.setAsync([option.alias]);
           this.showTech = false;
           this.showMain = true;
           this.showBack = true;
