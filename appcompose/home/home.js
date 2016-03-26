@@ -23,6 +23,16 @@
     // The Office initialize function must be run each time a new page is loaded
   Office.initialize = function(reason){
     jQuery(document).ready(function(){
+      // Check if the browser supports the date input type
+      if (!Modernizr.inputtypes.date){
+        // Add the jQuery UI DatePicker to all
+        // input tags that have their type attributes
+        // set to 'date'
+        $('input[type=date]').datepicker({
+            // specify the same format as the spec
+            dateFormat: 'mm-dd-yy'
+        });
+      }
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("TE Request");
       $(".valign").hover(function() {
