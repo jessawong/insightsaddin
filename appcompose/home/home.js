@@ -94,7 +94,7 @@
           } else {
             this.showSubmit = true;
           }
-          Office.context.mailbox.item.to.setAsync([option.alias]);
+          Office.context.mailbox.item.to.setAsync(this.technology[option].alias);
           this.showTech = false;
           this.showMain = true;
           this.showBack = true;
