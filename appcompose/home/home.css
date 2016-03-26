@@ -37,15 +37,15 @@
 }
 
 #office {
-    background: url(../../images/officeOverlay.png);
+    background: url(../../images/office.png);
 }
 
 #apps {
-    background: url(../../images/modernOverlay.png);
+    background: url(../../images/windows.png);
 }
 
 #cloud {
-    background: url(../../images/cloudOverlay.png);
+    background: url(../../images/cloud.png);
 }
 
 #background {
