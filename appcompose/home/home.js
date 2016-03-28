@@ -114,7 +114,7 @@
         this.addRequest = function() {
           var cloudDetails = '';
           if (this.intelCloud) {
-            cloudDetails = "<br/><h4>Industry/Verticle: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
+            cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
                             + "<br/><h4>Workloads: </h4>";
             for (var key in this.workloads) {
