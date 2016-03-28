@@ -46,7 +46,7 @@
 
   </div>
   <div id="mainContent">
-    <i ng-show="formCtrl.showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l">Back</span></i>
+    <i ng-show="formCtrl.showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-show="!formCtrl.showTech" ng-submit="formCtrl.addRequest()">
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
       <div ng-show="formCtrl.showMain">
@@ -121,7 +121,7 @@
         </div>
       </div>
       <div ng-show="formCtrl.showArrow" ng-click="formCtrl.cont()" id="cont">
-        <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl" aria-hidden="true"></i>
+        <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl link" aria-hidden="true"></i>
       </div>
       <div class="ms-Grid" ng-show="formCtrl.showCont">
         <div class="ms-Grid-row">
