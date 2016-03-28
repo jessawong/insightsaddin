@@ -28,6 +28,7 @@
         // Add the jQuery UI DatePicker to all
         // input tags that have their type attributes
         // set to 'date'
+        console.log("here");
         $('input[type=date]').datepicker({
             // specify the same format as the spec
             dateFormat: 'mm-dd-yy'
