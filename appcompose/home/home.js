@@ -113,6 +113,7 @@
         };
 
         this.addRequest = function() {
+          console.log(this.information);
           var cloudDetails = '';
           if (this.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
