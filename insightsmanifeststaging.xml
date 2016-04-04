@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+  <Id>ece3fb02-c131-4f1f-bf2b-b55b9d9f8530</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Jessica Wong</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Insights"/>
+  <Description DefaultValue="Easily send a request for a TE on your opportunity."/>
+  <HighResolutionIconUrl DefaultValue="https://insightsaddin.azurewebsites.net/images/icon-80.png"/>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="MailBox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://insightsaddin.azurewebsites.net/appcompose/home/home.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="funcFile"/>
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgComposeCmdGroup">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="msgCompose">
+                  <Label resid="msgComposePaneButtonLabel"/>
+                  <Supertip>
+                    <Title resid="msgComposePaneButtonTitle"/>
+                    <Description resid="msgComposePaneButtonDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="composePaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://insightsaddin.azurewebsites.net/images/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://insightsaddin.azurewebsites.net/images/icon-32.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://insightsaddin.azurewebsites.net/images/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="funcFile" DefaultValue="https://insightsaddin.azurewebsites.net/FunctionFile/Functions.html"/>
+        <bt:Url id="composePaneUrl" DefaultValue="https://insightsaddin.azurewebsites.net/appcompose/home/home.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Insights"/>
+        <bt:String id="msgComposePaneButtonLabel" DefaultValue="Request a TE"/>
+        <bt:String id="msgComposePaneButtonTitle" DefaultValue="Request a TE"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="msgComposePaneButtonDesc" DefaultValue="Opens a task pane allowing you to request a TE for your opportunity."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
