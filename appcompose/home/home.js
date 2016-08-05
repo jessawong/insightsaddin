@@ -131,19 +131,19 @@
                                                       + this.information.meeting + cloudDetails, {coercionType: "html"});
                                                       
           var payload = { 
-                                  "Pbe": "",
-                                  "Website": "", 
-                                  "Crm":"", 
-                                  "Stage":"", 
-                                  "EngagementType":"",
-                                  "Date":"",
-                                  "Reason":"",
-                                  "Location": "",
-                                  "Meeting": "",
-                                  "Industry":"",
-                                  "cloudStatus":"",
-                                  "cloudProvider":"",
-                                  "consumption":"",
+                                  "Pbe": "test",
+                                  "Website": this.information.website, 
+                                  "Crm": this.information.crm, 
+                                  "Stage":this.information.stage, 
+                                  "EngagementType":this.information.engagement,
+                                  "Date":this.information.date,
+                                  "Reason":this.information.reason,
+                                  "Location": this.information.location,
+                                  "Meeting": this.information.meeting,
+                                  "Industry":this.cloudInfor.industry,
+                                  "cloudStatus":this.cloudInfor.status,
+                                  "cloudProvider":this.cloudInfor.provider,
+                                  "consumption":this.cloudInfor.consumption,
                                   "WorkLoads": cloudDetails
                                 };
                                 
