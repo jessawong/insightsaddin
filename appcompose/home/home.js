@@ -171,7 +171,8 @@
             headers: { 
               'Authorization': token, 
               'Content-Length': payload.length, 
-              'Content-Type': 'application/atom+xml;type=entry;charset=utf-8' 
+              'Content-Type': 'application/atom+xml;type=entry;charset=utf-8',
+              'Access-Control-Allow-Origin':'https://insightsaddin-eh.servicebus.windows.net/insights-eh/messages' 
             } 
           };
           
