@@ -191,11 +191,11 @@
             } 
           };
           
-          $http.post(my_uri, payload, options).then(function onSuccess(response) { 
+          /*$http.post(my_uri, payload, options).then(function onSuccess(response) { 
                                                       console.log(response)
                                                     }, function onError(response) {
                                                       console.log(response)
-                                                    });
+                                                    });*/
 
           reset();
           showStatus();
