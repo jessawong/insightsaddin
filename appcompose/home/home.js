@@ -162,11 +162,11 @@
     //      var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
       //    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
           
-          var token = 'SharedAccessSignature sr=insightsaddin-eh.servicebus.windows.net%2finsights-eh%2fmessages&sig=DRb9KkE%2fxSieq95%2f0MGVSdFGibeXzEUhLctLAGEFtg%3d&se=1470433911&skn=send';
+          var token = 'SharedAccessSignature sr=insightsaddin-eh.servicebus.windows.net%2finsights-eh&sig=DRb9KkE%2fxSieq95%2f0MGVSdFGibeXzEUhLctLAGEFtg%3d&se=1470433911&skn=send';
                       
           var options = { 
             hostname: namespace + '.servicebus.windows.net', 
-            path: '/' + hubname + '/messages', 
+            path: '/' + hubname, 
             method: 'POST',
             headers: { 
               'Authorization': token, 
