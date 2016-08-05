@@ -6,7 +6,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Insights-Staging"/>
   <Description DefaultValue="Easily send a request for a TE on your opportunity."/>
-  <HighResolutionIconUrl DefaultValue="http://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
@@ -18,14 +18,14 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="http://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
+        <SourceLocation DefaultValue="https://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
   <Permissions>ReadWriteItem</Permissions>
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="https://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
@@ -57,13 +57,13 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="http://insightsaddinstaging.azurewebsites.net/images/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="http://insightsaddinstaging.azurewebsites.net/images/icon-32.png"/>
-        <bt:Image id="icon-80" DefaultValue="http://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
+        <bt:Image id="icon-16" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-32.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="funcFile" DefaultValue="http://insightsaddinstaging.azurewebsites.net/FunctionFile/Functions.html"/>
-        <bt:Url id="composePaneUrl" DefaultValue="http://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
+        <bt:Url id="funcFile" DefaultValue="https://insightsaddinstaging.azurewebsites.net/FunctionFile/Functions.html"/>
+        <bt:Url id="composePaneUrl" DefaultValue="https://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Insights"/>
