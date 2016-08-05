@@ -154,6 +154,20 @@
           // Token expires in 24 hours 
           var my_uri = 'https://' + namespace + '.servicebus.windows.net' + '/' + hubname + '/messages'; 
           
+          var ehClient = new EventHubClient(
+            {
+                'name': hubname,
+                'namespace': namespace,
+                'sasKey': "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=",
+                'sasKeyName': "send",
+                'timeOut': 100,
+            });
+            
+           var msg = new EventData(payload);
+           
+           ehClient.sendMessage(msg, function (messagingResult) { 
+                   console.log(messagingResult.result); 
+                   console.log(JSON.stringify(payload)); 
 
 //          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
       
