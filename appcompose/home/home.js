@@ -167,7 +167,8 @@
            
            ehClient.sendMessage(msg, function (messagingResult) { 
                    console.log(messagingResult.result); 
-                   console.log(JSON.stringify(payload)); 
+                   console.log(JSON.stringify(payload));
+           }); 
 
 //          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
       
