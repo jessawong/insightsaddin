@@ -129,7 +129,7 @@
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
                                                       + this.information.meeting + cloudDetails, {coercionType: "html"});
-                                                      
+          //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
                                   "Pbe": "test",
                                   "Website": this.information.website, 
@@ -144,15 +144,12 @@
                                   "cloudStatus":this.cloudInfor.status,
                                   "cloudProvider":this.cloudInfor.provider,
                                   "consumption":this.cloudInfor.consumption,
-                                  "WorkLoads": cloudDetails
+                                  "WorkLoads": cloudDetails //<- this is SUPER ugly. need to fix
                                 };
                                 
           var namespace = "insightsaddin-eh";
           var hubname = "insights-eh";
           var key_name = "send";
-        
-          // Token expires in 24 hours 
-          var my_uri = 'https://' + namespace + '.servicebus.windows.net' + '/' + hubname + '/messages'; 
           
           var ehClient = new EventHubClient(
             {
@@ -169,33 +166,6 @@
                    console.log(messagingResult.result); 
                    console.log(JSON.stringify(payload));
            }); 
-
-//          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
-      
-      
-  //        var string_to_sign = encodeURIComponent(my_uri) + '\n' + expiry; 
-    //      var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
-      //    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
-          
-          var token = 'SharedAccessSignature sr=insightsaddin-eh.servicebus.windows.net%2finsights-eh&sig=DRb9KkE%2fxSieq95%2f0MGVSdFGibeXzEUhLctLAGEFtg%3d&se=1470433911&skn=send';
-                      
-          var options = { 
-            hostname: namespace + '.servicebus.windows.net', 
-            path: '/' + hubname, 
-            method: 'POST',
-            headers: { 
-              'Authorization': token, 
-              'Content-Length': payload.length, 
-              'Content-Type': 'application/atom+xml;type=entry;charset=utf-8',
-              'Access-Control-Allow-Origin':'https://insightsaddinstaging.azurewebsites.net/' 
-            } 
-          };
-          
-          /*$http.post(my_uri, payload, options).then(function onSuccess(response) { 
-                                                      console.log(response)
-                                                    }, function onError(response) {
-                                                      console.log(response)
-                                                    });*/
 
           reset();
           showStatus();
