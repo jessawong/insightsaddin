@@ -2,16 +2,14 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png', 'prod': true}, 
-                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
-                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
-  var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
+  var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
+  var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
   var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
   var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':''};
   var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
   var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
   var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
-  var provider = ['Azure', 'AWS', 'Google', 'Other'];
+  var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
   var workLoads = {'Compute': false, 'Web & Mobile': false, 'Data & Storage': false,
                     'Analytics': false, 'Internet of Things': false,
@@ -45,7 +43,7 @@
     });
   };
 
-    app.controller('FormController', function($scope) {
+    app.controller('FormController', function($scope, $http) {
         this.technology = selectTech;
         this.engagement = engageType;
         this.cloudInfor = cloudInfo;
@@ -121,7 +119,7 @@
                             + "<br/><h4>Workloads: </h4>";
             for (var key in this.workloads) {
               if (this.workloads[key]) {
-                cloudDetails += key + "<br/>";
+                cloudDetails += key + ",";
               }
             }
           }
@@ -131,6 +129,59 @@
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
                                                       + this.information.meeting + cloudDetails, {coercionType: "html"});
+                                                      
+          var payload = { 
+                                  "Pbe": "",
+                                  "Website": "", 
+                                  "Crm":"", 
+                                  "Stage":"", 
+                                  "EngagementType":"",
+                                  "Date":"",
+                                  "Reason":"",
+                                  "Location": "",
+                                  "Meeting": "",
+                                  "Industry":"",
+                                  "cloudStatus":"",
+                                  "cloudProvider":"",
+                                  "consumption":"",
+                                  "WorkLoads": cloudDetails
+                                };
+                                
+          var namespace = "insightsaddin-eh";
+          var hubname = "insights-eh";
+          var key_name = "send";
+        
+          // Token expires in 24 hours 
+          var my_uri = 'https://' + namespace + '.servicebus.windows.net' + '/' + hubname + '/messages'; 
+          
+
+          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
+      
+      
+          var string_to_sign = encodeURIComponent(uri) + '\n' + expiry; 
+          var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
+          var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+          
+          var token = 'SharedAccessSignature sr=' + encodeURIComponent(my_uri) + '&sig=' + encodeURIComponent(hashInBase64) + 
+                      '&se=' + expiry + '&skn=' + key_name; 
+                      
+          var options = { 
+            hostname: namespace + '.servicebus.windows.net', 
+            path: '/' + hubname + '/messages', 
+            method: 'POST',
+            headers: { 
+              'Authorization': token, 
+              'Content-Length': payload.length, 
+              'Content-Type': 'application/atom+xml;type=entry;charset=utf-8' 
+            } 
+          };
+          
+          $http.post(my_uri, payload, options).then(function onSuccess(response) { 
+                                                      console.log(response)
+                                                    }, function onError(response) {
+                                                      console.log(response)
+                                                    });
+
           reset();
           showStatus();
           this.information = info;
