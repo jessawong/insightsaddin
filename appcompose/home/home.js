@@ -155,15 +155,14 @@
           var my_uri = 'https://' + namespace + '.servicebus.windows.net' + '/' + hubname + '/messages'; 
           
 
-          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
+//          var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
       
       
-          var string_to_sign = encodeURIComponent(my_uri) + '\n' + expiry; 
-          var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
-          var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+  //        var string_to_sign = encodeURIComponent(my_uri) + '\n' + expiry; 
+    //      var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
+      //    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
           
-          var token = 'SharedAccessSignature sr=' + encodeURIComponent(my_uri) + '&sig=' + encodeURIComponent(hashInBase64) + 
-                      '&se=' + expiry + '&skn=' + key_name; 
+          var token = 'SharedAccessSignature sr=insightsaddin-eh.servicebus.windows.net%2finsights-eh%2fmessages&sig=DRb9KkE%2fxSieq95%2f0MGVSdFGibeXzEUhLctLAGEFtg%3d&se=1470433911&skn=send';
                       
           var options = { 
             hostname: namespace + '.servicebus.windows.net', 
