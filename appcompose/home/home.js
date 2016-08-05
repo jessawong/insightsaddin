@@ -158,7 +158,7 @@
           var expiry = Math.floor(new Date().getTime()/1000+3600*24); 
       
       
-          var string_to_sign = encodeURIComponent(uri) + '\n' + expiry; 
+          var string_to_sign = encodeURIComponent(my_uri) + '\n' + expiry; 
           var hash = CryptoJS.HmacSHA256(string_to_sign, "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=");
           var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
           
