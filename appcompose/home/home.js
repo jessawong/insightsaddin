@@ -33,13 +33,13 @@
         });
       }*/
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
-      Office.context.mailbox.item.subject.setAsync("TE Request");
-      $(".valign").hover(function() {
+      Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+     /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
       function() {
         $(this).stop().animate({"opacity":"0.0"}, "fast");
-      });
+      });*/
     });
   };
 
@@ -55,14 +55,16 @@
         this.information = info;
         this.timeOptions = time;
         this.skype = false;
-        this.intelCloud = false;
-        this.showArrow = false;
+        this.intelCloud = true;
+        //this.showArrow = true;
         this.showCont = false;
         this.ads = false;
         this.showSubmit = false;
         this.showBack = false;
         this.stage = crmStage;
-        this.showMain = false;
+        this.showMain = true;
+        this.information["Technology"] = this.technology[option].type;
+        Office.context.mailbox.item.to.setAsync([this.technology[option].alias]);
         this.goBack = function() {
           if (this.showCont) {
             this.showCont = false;
@@ -83,10 +85,10 @@
           }
           this.showSubmit = false;
         };
-        this.setTech = function(option) {
+       /* this.setTech = function(option) {
           console.log(this.technology[option]);
-          this.information["Technology"] = this.technology[option].type;
-          if (this.technology[option].type === "Intelligent Cloud") {
+          //this.information["Technology"] = this.technology[option].type;
+         if (this.technology[option].type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
             this.showSubmit = false;
@@ -94,10 +96,10 @@
             this.showSubmit = true;
           }
           Office.context.mailbox.item.to.setAsync([this.technology[option].alias]);
-          this.showTech = false;
+          //this.showTech = false;
           this.showMain = true;
           this.showBack = true;
-        };
+        };*/
 
         this.setWork = function(option) {
           option.value = !option.value;
@@ -105,6 +107,7 @@
 
         this.cont = function() {
           this.showCont = true;
+          this.showBack = true;
           this.showSubmit = true;
           this.showMain = false;
           this.showArrow = false;
@@ -183,7 +186,7 @@
           this.skype = !this.skype;
         };
 
-        this.goHome = function() {
+        /*this.goHome = function() {
           this.showTech = true;
           this.intelCloud = false;
           this.showCont = false;
@@ -191,7 +194,7 @@
           this.showArrow = false;
           showForm();
           hideStatus();
-        };
+        };*/
     });
 
     function showStatus(domId) {

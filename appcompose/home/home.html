@@ -38,17 +38,17 @@
   <script src="home.js"></script>
 </head>
 
-<body id="main" ng-app="readHome" ng-controller="FormController as formCtrl">
+<!--<body id="main" ng-app="readHome" ng-controller="FormController as formCtrl">
   <div ng-show="formCtrl.showTech" class="center" id="content-main">
     <div id="background"></div>
     <div class="resourceButton" id="cloud" ng-click="formCtrl.setTech(0)">
       <img class="valign" ng-src="../../images/cloudOverlay.png"></img>
-    </div>
+    </div>-->
 
   </div>
   <div id="mainContent">
     <i ng-show="formCtrl.showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
-    <form id="form" class="center" ng-show="!formCtrl.showTech" ng-submit="formCtrl.addRequest()">
+    <form id="form" class="center" ng-submit="formCtrl.addRequest()">
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
       <div ng-show="formCtrl.showMain">
         <div class="ms-Grid">
@@ -121,7 +121,7 @@
           </div>
         </div>
       </div>
-      <div ng-show="formCtrl.showArrow" ng-click="formCtrl.cont()" id="cont">
+      <div ng-click="formCtrl.cont()" id="cont">
         <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl link" aria-hidden="true"></i>
       </div>
       <div class="ms-Grid" ng-show="formCtrl.showCont">
@@ -168,12 +168,12 @@
     </form>
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
       <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please hit "send" and someone from the v-team will get back to you within 24 hours.<br/>
-      <div class="resourceButton">
+      <!--<div class="resourceButton">
         <button class="ms-Button" ng-click="formCtrl.goHome()">Home</button>
-      </div>
+      </div>-->
     </div>
     <div id="error" class="ms-fontWeight-semilight ms-fontColor-error">
-      <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with details of your error.
+      <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with details of your steps to reproduce the error.
     </div>
   </div>
 </body>

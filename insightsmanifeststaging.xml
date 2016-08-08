@@ -5,7 +5,7 @@
   <ProviderName>Jessica Wong</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Insights-Staging"/>
-  <Description DefaultValue="Easily send a request for a TE on your opportunity."/>
+  <Description DefaultValue="Easily send a request for an Azure TE"/>
   <HighResolutionIconUrl DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -67,8 +67,8 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Insights"/>
-        <bt:String id="msgComposePaneButtonLabel" DefaultValue="Request a TE"/>
-        <bt:String id="msgComposePaneButtonTitle" DefaultValue="Request a TE"/>
+        <bt:String id="msgComposePaneButtonLabel" DefaultValue="Start Intelligent Cloud Request"/>
+        <bt:String id="msgComposePaneButtonTitle" DefaultValue="Azure"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="msgComposePaneButtonDesc" DefaultValue="Opens a task pane allowing you to request a TE for your opportunity."/>
