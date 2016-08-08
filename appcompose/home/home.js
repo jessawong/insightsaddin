@@ -36,8 +36,7 @@
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
-      
-     info["Technology"] = selectTech[0].type;
+     
      /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
@@ -48,6 +47,7 @@
   };
 
     app.controller('FormController', function($scope) {
+        info["Technology"] = selectTech[0].type;
         this.technology = selectTech;
         this.engagement = engageType;
         this.cloudInfor = cloudInfo;
