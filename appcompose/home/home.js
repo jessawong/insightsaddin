@@ -117,11 +117,13 @@
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
                             + "<br/><h4>Workloads: </h4>";
+            var workloadString = "[";
             for (var key in this.workloads) {
               if (this.workloads[key]) {
-                cloudDetails += key + ",";
+                workloadString += key + ",";
               }
             }
+            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
           }
           Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
                                                       + "<br/><h4>Stage:</h4>" + this.information.stage + "<br/><h4>Engagement Requested: </h4>" 
@@ -144,7 +146,7 @@
                                   "cloudStatus":this.cloudInfor.status,
                                   "cloudProvider":this.cloudInfor.provider,
                                   "consumption":this.cloudInfor.consumption,
-                                  "WorkLoads": cloudDetails //<- this is SUPER ugly. need to fix
+                                  "WorkLoads": workloadString
                                 };
                                 
           var namespace = "insightsaddin-eh";
