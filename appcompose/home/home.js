@@ -133,7 +133,7 @@
                                                       + this.information.meeting + cloudDetails, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
-                                  "Pbe": "test",
+                                  "Pbe": Office.context.mailbox.userProfile.displayName,
                                   "Website": this.information.website, 
                                   "Crm": this.information.crm, 
                                   "Stage":this.information.stage, 
@@ -165,12 +165,15 @@
            var msg = new EventData(payload);
            
            ehClient.sendMessage(msg, function (messagingResult) { 
-                   console.log(messagingResult.result); 
+                    if (messagingResult.result == "Success") {
+                      showStatus("#submission");
+                    } else {
+                      showStatus("#error");
+                    }
                    console.log(JSON.stringify(payload));
            }); 
 
           reset();
-          showStatus();
           this.information = info;
           this.showBack = false;
           this.workloads = workLoads;
@@ -191,9 +194,9 @@
         };
     });
 
-    function showStatus() {
+    function showStatus(domId) {
       $("#form").hide();
-      $("#submission").show();
+      $(domId).show();
     }
 
     function hideStatus() {
