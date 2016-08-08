@@ -32,10 +32,12 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
-      info.pbe = Office.context.mailbox.userProfile.emailAddress;
+      info.pbe = Office.context.mailbox.userProfile.displayName;
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
+      
+     info["Technology"] = selectTech[0].type;
      /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
@@ -45,7 +47,7 @@
     });
   };
 
-    app.controller('FormController', function($scope, $http) {
+    app.controller('FormController', function($scope) {
         this.technology = selectTech;
         this.engagement = engageType;
         this.cloudInfor = cloudInfo;
@@ -65,7 +67,6 @@
         this.showBack = false;
         this.stage = crmStage;
         this.showMain = true;
-        this.information["Technology"] = selectTech[0].type;
         this.goBack = function() {
           if (this.showCont) {
             this.showCont = false;
@@ -137,7 +138,7 @@
                                                       + this.information.meeting + cloudDetails, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
-                                  "Pbe": Office.context.mailbox.userProfile.displayName,
+                                  "Pbe": info.pbe,
                                   "Website": this.information.website, 
                                   "Crm": this.information.crm, 
                                   "Stage":this.information.stage, 
