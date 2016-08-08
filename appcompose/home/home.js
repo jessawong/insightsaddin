@@ -32,7 +32,7 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
-      info.pbe = Office.context.mailbox.userProfile.displayName;
+      //info.pbe = Office.context.mailbox.userProfile.displayName;
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
@@ -57,6 +57,7 @@
         this.consumption = consumptionLevel;
         this.workloads = workLoads;
         this.information = info;
+        this.information.pbe = Office.context.mailbox.userProfile.displayName;
         this.timeOptions = time;
         this.skype = false;
         this.intelCloud = true;
