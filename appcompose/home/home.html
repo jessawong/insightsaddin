@@ -52,10 +52,10 @@
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
       <div ng-show="formCtrl.showMain">
         <div class="ms-Grid">
-          <div class="ms-Grid-row">
+          <!--<div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
-          </div>
+          </div>-->
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="formCtrl.information.website"></input></div>
@@ -121,7 +121,7 @@
           </div>
         </div>
       </div>
-      <div ng-click="formCtrl.cont()" id="cont">
+      <div ng-click="formCtrl.cont()" ng-show="formCtrl.showArrow" id="cont">
         <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl link" aria-hidden="true"></i>
       </div>
       <div class="ms-Grid" ng-show="formCtrl.showCont">
