@@ -4,7 +4,7 @@
   var app = angular.module('readHome', []);
   var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
-  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
+  var info = {};
   var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':''};
   var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
   var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
@@ -32,7 +32,8 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
-      info.pbe = Office.context.mailbox.userProfile.displayName;
+      info = {'pbe': Office.context.mailbox.userProfile.displayName, 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
+      //info.pbe = Office.context.mailbox.userProfile.displayName;
       $("#pbeName").text(info.pbe);
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
