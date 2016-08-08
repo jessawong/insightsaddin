@@ -34,6 +34,8 @@
       }*/
       info.pbe = Office.context.mailbox.userProfile.emailAddress;
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+      
+      Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
      /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
@@ -63,8 +65,7 @@
         this.showBack = false;
         this.stage = crmStage;
         this.showMain = true;
-        this.information["Technology"] = this.technology[option].type;
-        Office.context.mailbox.item.to.setAsync([this.technology[option].alias]);
+        this.information["Technology"] = selectTech[0].type;
         this.goBack = function() {
           if (this.showCont) {
             this.showCont = false;
