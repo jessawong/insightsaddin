@@ -33,6 +33,7 @@
         });
       }*/
       info.pbe = Office.context.mailbox.userProfile.displayName;
+      $("#pbeName").text(info.pbe);
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
