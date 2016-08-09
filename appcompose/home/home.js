@@ -153,7 +153,8 @@
                                   "cloudStatus":this.cloudInfor.status,
                                   "cloudProvider":this.cloudInfor.provider,
                                   "consumption":this.cloudInfor.consumption,
-                                  "WorkLoads": workloadString
+                                  "WorkLoads": workloadString,
+                                  "id": ''
                                 };
                                 
           var namespace = "insightsaddin-eh";
