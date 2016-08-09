@@ -137,7 +137,7 @@
                                                       + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
-                                                      + this.information.meeting + cloudDetails + workdloadString, {coercionType: "html"});
+                                                      + this.information.meeting + cloudDetails + workloadString, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
                                   "Pbe": info.pbe,
