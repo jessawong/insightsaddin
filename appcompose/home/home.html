@@ -91,7 +91,7 @@
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-              <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, cloud status, consumption, or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
+              <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, funding or any other type of relevant information here." ng-model="formCtrl.information.reason"></textarea>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -156,12 +156,12 @@
           </div>
         </div>
         <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Workloads:</div>
+          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Primary Workload:</div>
         </div>
-        <div ng-repeat="(key, value) in formCtrl.workloads" class="ms-Grid=row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <input type="checkbox" name="load" ng-model="formCtrl.workloads[key]">{{key}}
-          </div>
+        <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+          <select ng-model="formCtrl.cloudInfor.vteam">
+            <option ng-repeat="work in formCtrl.workloads">{{work}}</option>
+          </select>
         </div>
       </div>
       <button ng-show="formCtrl.showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>

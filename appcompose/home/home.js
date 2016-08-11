@@ -5,17 +5,13 @@
   var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
   var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
   var info = info = {'pbe': '', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
-  var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':''};
+  var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':'', 'vteam':''};
   var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
   var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
   var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
   var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
-  var workLoads = {'Compute': false, 'Web & Mobile': false, 'Data & Storage': false,
-                    'Analytics': false, 'Internet of Things': false,
-                    'Networking': false, 'Media & CDN': false, 'Hybrid Integration': false,
-                    'Identity & Access Management': false,
-                    'Dev Services': false, 'Management & Security': false};
+  var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
 
 
     // The Office initialize function must be run each time a new page is loaded
@@ -35,7 +31,7 @@
       
       info.pbe = Office.context.mailbox.userProfile.displayName;
       //$("#pbeName").text(info.pbe);
-      Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+      //Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
      
@@ -122,22 +118,22 @@
           var cloudDetails = '';
           if (this.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
-                            + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
-                            + "<br/><h4>Workloads: </h4>";
-            var workloadString = "[";
+                            + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
+           /* var workloadString = "[";
             for (var key in this.workloads) {
               if (this.workloads[key]) {
                 workloadString += key + ",";
               }
             }
-            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
+            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";*/
           }
+          Office.context.mailbox.item.subject.setAsync("[" + this.cloudInfor.vteam + "] Intelligent Cloud TE Request");
           Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
                                                       + "<br/><h4>Stage:</h4>" + this.information.stage + "<br/><h4>Engagement Requested: </h4>" 
                                                       + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
-                                                      + this.information.meeting + cloudDetails + workloadString, {coercionType: "html"});
+                                                      + this.information.meeting + cloudDetails, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
                                   "Pbe": info.pbe,
@@ -153,7 +149,7 @@
                                   "cloudStatus":this.cloudInfor.status,
                                   "cloudProvider":this.cloudInfor.provider,
                                   "consumption":this.cloudInfor.consumption,
-                                  "WorkLoads": workloadString
+                                  "WorkLoads": this.cloudInfor.vteam
                                 };
                                 
           var namespace = "insightsaddin-eh";
@@ -224,9 +220,9 @@
           }
         }
       }
-      for (var key in workLoads) {
+      /*for (var key in workLoads) {
         workLoads[key] = false;
-      }
+      }*/
     }
 
 })();
