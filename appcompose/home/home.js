@@ -12,7 +12,7 @@
   var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
   var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
-
+  var secWorkLoads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
 
     // The Office initialize function must be run each time a new page is loaded
   Office.initialize = function(reason){
@@ -53,7 +53,8 @@
         this.cloudStatus = status;
         this.cloudProv = provider;
         this.consumption = consumptionLevel;
-        this.workloads = workLoads;
+        this.primeWorkloads = workLoads;
+        this.secondWorkloads = secWorkLoads;
         this.information = info;
         this.timeOptions = time;
         this.skype = false;
@@ -119,13 +120,13 @@
           if (this.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
                             + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
-           /* var workloadString = "[";
-            for (var key in this.workloads) {
-              if (this.workloads[key]) {
+            var workloadString = "[";
+            for (var key in this.secondWorkloads) {
+              if (this.secondWorkloads[key]) {
                 workloadString += key + ",";
               }
             }
-            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";*/
+            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
           }
           Office.context.mailbox.item.subject.setAsync("[" + this.cloudInfor.vteam + "] Intelligent Cloud TE Request");
           Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
@@ -133,7 +134,7 @@
                                                       + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
-                                                      + this.information.meeting + cloudDetails, {coercionType: "html"});
+                                                      + this.information.meeting + cloudDetails + "<br/><h4>Secondary Workloads:</h4>" + workloadString, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
                                   "Pbe": info.pbe,
@@ -149,7 +150,8 @@
                                   "cloudStatus":this.cloudInfor.status,
                                   "cloudProvider":this.cloudInfor.provider,
                                   "consumption":this.cloudInfor.consumption,
-                                  "WorkLoads": this.cloudInfor.vteam
+                                  "primaryWorkLoad": this.cloudInfor.vteam,
+                                  "secWorkLoads": workloadString
                                 };
                                 
           var namespace = "insightsaddin-eh";
@@ -220,9 +222,9 @@
           }
         }
       }
-      /*for (var key in workLoads) {
-        workLoads[key] = false;
-      }*/
+      for (var key in secWorkLoads) {
+        secWorkLoads[key] = false;
+      }
     }
 
 })();

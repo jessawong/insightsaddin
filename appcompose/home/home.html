@@ -160,8 +160,17 @@
         </div>
         <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
           <select ng-model="formCtrl.cloudInfor.vteam">
-            <option ng-repeat="work in formCtrl.workloads">{{work}}</option>
+            <option ng-repeat="work in formCtrl.primeWorkloads">{{work}}</option>
           </select>
+        </div>
+      </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Secondary Workloads:</div>
+        </div>
+        <div ng-repeat="(key, value) in formCtrl.secondWorkloads" class="ms-Grid=row">
+          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
+            <input type="checkbox" name="load" ng-model="formCtrl.secondWorkloads[key]">{{key}}
+          </div>
         </div>
       </div>
       <button ng-show="formCtrl.showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>
