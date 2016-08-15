@@ -75,7 +75,7 @@
     margin-bottom: 10px;
 }
 
-#main {
+#main, #mainContent {
     margin: 0px;
     max-width: 250px;
     padding: 3px;
