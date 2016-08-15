@@ -2,23 +2,17 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var selectTech = [{'type': 'Productivity','url':'../../images/office.png', 'alias':'US_DX_RISV_PROD_TEAM@microsoft.com', 'fadeUrl': '../../images/officeOverlay.png', 'prod': true}, 
-                    {'type':'Modern Apps','url':'../../images/windows.png', 'alias': 'US_DX_RISV_APPS@microsoft.com', 'fadeUrl': '../../images/modernOverlay.png', 'modern': true}, 
-                    {'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'US_DX_RISV_CLOUD@microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
-  var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Delivery', 'Other'];
-  var info = {'pbe':'', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
-  var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':''};
+  var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
+  var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
+  var info = info = {'pbe': '', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
+  var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':'', 'vteam':''};
   var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
   var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
   var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
-  var provider = ['Azure', 'AWS', 'Google', 'Other'];
+  var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
-  var workLoads = {'Compute': false, 'Web & Mobile': false, 'Data & Storage': false,
-                    'Analytics': false, 'Internet of Things': false,
-                    'Networking': false, 'Media & CDN': false, 'Hybrid Integration': false,
-                    'Identity & Access Management': false,
-                    'Dev Services': false, 'Management & Security': false};
-
+  var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
+  var secWorkLoads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
 
     // The Office initialize function must be run each time a new page is loaded
   Office.initialize = function(reason){
@@ -34,18 +28,24 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
-      info.pbe = Office.context.mailbox.userProfile.emailAddress;
-      Office.context.mailbox.item.subject.setAsync("TE Request");
-      $(".valign").hover(function() {
+      
+      info.pbe = Office.context.mailbox.userProfile.displayName;
+      //$("#pbeName").text(info.pbe);
+      //Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+      
+      Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
+     
+     /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
       function() {
         $(this).stop().animate({"opacity":"0.0"}, "fast");
-      });
+      });*/
     });
   };
 
     app.controller('FormController', function($scope) {
+        info["Technology"] = selectTech[0].type;
         this.technology = selectTech;
         this.engagement = engageType;
         this.cloudInfor = cloudInfo;
@@ -53,18 +53,19 @@
         this.cloudStatus = status;
         this.cloudProv = provider;
         this.consumption = consumptionLevel;
-        this.workloads = workLoads;
+        this.primeWorkloads = workLoads;
+        this.secondWorkloads = secWorkLoads;
         this.information = info;
         this.timeOptions = time;
         this.skype = false;
-        this.intelCloud = false;
-        this.showArrow = false;
+        this.intelCloud = true;
+        this.showArrow = true;
         this.showCont = false;
         this.ads = false;
         this.showSubmit = false;
         this.showBack = false;
         this.stage = crmStage;
-        this.showMain = false;
+        this.showMain = true;
         this.goBack = function() {
           if (this.showCont) {
             this.showCont = false;
@@ -85,10 +86,10 @@
           }
           this.showSubmit = false;
         };
-        this.setTech = function(option) {
+       /* this.setTech = function(option) {
           console.log(this.technology[option]);
-          this.information["Technology"] = this.technology[option].type;
-          if (this.technology[option].type === "Intelligent Cloud") {
+          //this.information["Technology"] = this.technology[option].type;
+         if (this.technology[option].type === "Intelligent Cloud") {
             this.intelCloud = true;
             this.showArrow = true;
             this.showSubmit = false;
@@ -96,10 +97,10 @@
             this.showSubmit = true;
           }
           Office.context.mailbox.item.to.setAsync([this.technology[option].alias]);
-          this.showTech = false;
+          //this.showTech = false;
           this.showMain = true;
           this.showBack = true;
-        };
+        };*/
 
         this.setWork = function(option) {
           option.value = !option.value;
@@ -107,6 +108,7 @@
 
         this.cont = function() {
           this.showCont = true;
+          this.showBack = true;
           this.showSubmit = true;
           this.showMain = false;
           this.showArrow = false;
@@ -117,22 +119,66 @@
           var cloudDetails = '';
           if (this.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
-                            + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption
-                            + "<br/><h4>Workloads: </h4>";
-            for (var key in this.workloads) {
-              if (this.workloads[key]) {
-                cloudDetails += key + "<br/>";
+                            + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
+            var workloadString = "[";
+            for (var key in this.secondWorkloads) {
+              if (this.secondWorkloads[key]) {
+                workloadString += key + ",";
               }
             }
+            workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
           }
+          Office.context.mailbox.item.subject.setAsync("[" + this.cloudInfor.vteam + "] Intelligent Cloud TE Request");
           Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
                                                       + "<br/><h4>Stage:</h4>" + this.information.stage + "<br/><h4>Engagement Requested: </h4>" 
                                                       + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
                                                       + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
                                                       + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
-                                                      + this.information.meeting + cloudDetails, {coercionType: "html"});
+                                                      + this.information.meeting + cloudDetails + "<br/><h4>Secondary Workloads:</h4>" + workloadString, {coercionType: "html"});
+          //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
+          var payload = { 
+                                  "Pbe": info.pbe,
+                                  "Website": this.information.website, 
+                                  "Crm": this.information.crm, 
+                                  "Stage":this.information.stage, 
+                                  "EngagementType":this.information.engagement,
+                                  "Date":this.information.date,
+                                  "Reason":this.information.reason,
+                                  "Location": this.information.location,
+                                  "Meeting": this.information.meeting,
+                                  "Industry":this.cloudInfor.industry,
+                                  "cloudStatus":this.cloudInfor.status,
+                                  "cloudProvider":this.cloudInfor.provider,
+                                  "consumption":this.cloudInfor.consumption,
+                                  "primaryWorkLoad": this.cloudInfor.vteam,
+                                  "secWorkLoads": workloadString
+                                };
+                                
+          var namespace = "insightsaddin-eh";
+          var hubname = "insights-eh";
+          var key_name = "send";
+          
+          var ehClient = new EventHubClient(
+            {
+                'name': hubname,
+                'namespace': namespace,
+                'sasKey': "HsoQY4aVbX2cOEhg5hqwfzQDSLLIKyvvIrNt/u2jU+k=",
+                'sasKeyName': "send",
+                'timeOut': 100,
+            });
+            
+           var msg = new EventData(payload);
+           
+           ehClient.sendMessage(msg, function (messagingResult) { 
+                    if (messagingResult.result == "Success") {
+                      showStatus("#submission");
+                    } else {
+                      showStatus("#error");
+                    }
+                   console.log(JSON.stringify(payload));
+           }); 
+
           reset();
-          showStatus();
           this.information = info;
           this.showBack = false;
           this.workloads = workLoads;
@@ -142,7 +188,7 @@
           this.skype = !this.skype;
         };
 
-        this.goHome = function() {
+        /*this.goHome = function() {
           this.showTech = true;
           this.intelCloud = false;
           this.showCont = false;
@@ -150,12 +196,12 @@
           this.showArrow = false;
           showForm();
           hideStatus();
-        };
+        };*/
     });
 
-    function showStatus() {
+    function showStatus(domId) {
       $("#form").hide();
-      $("#submission").show();
+      $(domId).show();
     }
 
     function hideStatus() {
@@ -176,8 +222,8 @@
           }
         }
       }
-      for (var key in workLoads) {
-        workLoads[key] = false;
+      for (var key in secWorkLoads) {
+        secWorkLoads[key] = false;
       }
     }
 

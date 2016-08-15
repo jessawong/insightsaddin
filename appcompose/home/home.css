@@ -75,10 +75,15 @@
     margin-bottom: 10px;
 }
 
-#main {
+#main, #form {
     margin: 0px;
-    max-width: 250px;
+    min-width: 250px;
     padding: 3px;
+}
+
+#mainContent {
+    min-width: 250px;
+    min-height: 750px;
 }
 
 .clearLeft {
