@@ -75,15 +75,15 @@
     margin-bottom: 10px;
 }
 
-#main, #mainContent {
+#main {
     margin: 0px;
     max-width: 250px;
     padding: 3px;
 }
 
 #mainContent {
-    max-width: 250px;
-    max-height: 750px;
+    min-width: 250px;
+    min-height: 750px;
 }
 
 .clearLeft {
