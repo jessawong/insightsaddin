@@ -81,6 +81,11 @@
     padding: 3px;
 }
 
+#mainContent {
+    min-width: 250px;
+    min-height: 750px;
+}
+
 .clearLeft {
     clear:left;
     margin-top: 5px;
