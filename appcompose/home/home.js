@@ -13,7 +13,17 @@
   var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
   var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
   var secWorkLoads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
-
+  var timepicker = new Pikaday({
+        field: $('#datepicker'),
+        firstDay: 1,
+        minDate: new Date(2016, 0, 1),
+        maxDate: new Date(2100, 12, 31),
+        yearRange: [2016,2100],
+        showTime: true,
+        autoClose: false,
+        use24hour: false,
+        format: 'MMM Do YYYY, h:mm a'
+    });
     // The Office initialize function must be run each time a new page is loaded
   Office.initialize = function(reason){
     jQuery(document).ready(function(){
@@ -28,17 +38,7 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
-      var timepicker = new Pikaday({
-        field: $('#datepicker'),
-        firstDay: 1,
-        minDate: new Date(2016, 0, 1),
-        maxDate: new Date(2100, 12, 31),
-        yearRange: [2016,2100],
-        showTime: true,
-        autoClose: false,
-        use24hour: false,
-        format: 'MMM Do YYYY, h:mm a'
-    });
+      
       
       info.pbe = Office.context.mailbox.userProfile.displayName;
       //$("#pbeName").text(info.pbe);
