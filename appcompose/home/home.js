@@ -28,13 +28,23 @@
             dateFormat: 'mm-dd-yy'
         });
       }*/
+      var timepicker = new Pikaday({
+        field: $('#datepicker'),
+        firstDay: 1,
+        minDate: new Date(2016, 0, 1),
+        maxDate: new Date(2100, 12, 31),
+        yearRange: [2016,2100],
+        showTime: true,
+        autoClose: false,
+        use24hour: false,
+        format: 'MMM Do YYYY, h:mm a'
+    });
       
       info.pbe = Office.context.mailbox.userProfile.displayName;
       //$("#pbeName").text(info.pbe);
       //Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
       Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
-     
      /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },
