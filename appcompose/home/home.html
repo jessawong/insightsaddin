@@ -13,7 +13,6 @@
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="../../scripts/servicebusjssdk-1.2.js"/>
-  <script src="../../node_modules/angularjs-datepicker/src/js/angular-datepicker.js"/>
   <script src="../../scripts/moment.js"/>
   <script src="../../scripts/Pikaday/pikaday.js"/>
   <link href="https://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/redmond/jquery-ui.css"
@@ -44,6 +43,7 @@
 
   </div>-->
 <body ng-app="readHome">
+  <script src="../../node_modules/angularjs-datepicker/src/js/angular-datepicker.js"/>
   <div id="main" ng-controller="FormController as formCtrl">
     <i ng-show="formCtrl.showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-submit="formCtrl.addRequest()">
