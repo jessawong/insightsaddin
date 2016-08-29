@@ -44,7 +44,7 @@
       //$("#pbeName").text(info.pbe);
       //Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       
-      Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
+     // Office.context.mailbox.item.to.setAsync([selectTech[0].alias]);
      /* $(".valign").hover(function() {
         $(this).stop().animate({"opacity":"1.0"}, "fast");
       },

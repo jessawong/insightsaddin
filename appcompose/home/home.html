@@ -9,11 +9,11 @@
   <link href="../../bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" type="text/css" />
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet"/>
   <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet"/>
+  <link href="../../node_modules/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css"/>
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="../../scripts/datepicker/modernizr-custom.js"></script>
   <script src="../../scripts/servicebusjssdk-1.2.js"/>
-  
+  <script src="../../node_modules/angularjs-datepicker/src/js/angular-datepicker.js"/>
   <script src="../../scripts/moment.js"/>
   <script src="../../scripts/Pikaday/pikaday.js"/>
   <link href="https://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/redmond/jquery-ui.css"
@@ -43,8 +43,8 @@
     </div>
 
   </div>-->
-<body>
-  <div id="main" ng-app="readHome" ng-controller="FormController as formCtrl">
+<body ng-app="readHome">
+  <div id="main" ng-controller="FormController as formCtrl">
     <i ng-show="formCtrl.showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="formCtrl.goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-submit="formCtrl.addRequest()">
       <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
@@ -81,7 +81,9 @@
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <datepicker date-format="MM-dd-YYYY">
                 <input type="text" id="datepicker" ng-model="formCtrl.information.date"></input>
+              </datepicker>
             </div>
           </div>
           <div class="ms-Grid-row">
