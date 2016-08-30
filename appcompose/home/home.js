@@ -37,7 +37,7 @@
         $scope.technology = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
         $scope.engagement = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];;
         $scope.cloudInfor = {'status': '', 'provider':'', 'consumption':'', 'workloads':'', 'vteam':''};
-        this.showTech = true;
+        //this.showTech = true;
         $scope.cloudStatus = ['New', 'Experimenting', 'Hybrid', 'Running'];
         $scope.cloudProv = ['None','Azure', 'AWS', 'Google', 'Other'];
         $scope.consumption = ['<25k', '25k-99k', '100k-499k', '500k+'];
