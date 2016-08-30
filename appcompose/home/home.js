@@ -1,32 +1,21 @@
 (function(){
   'use strict';
 
-  var app = angular.module('readHome', ['720kb.datepicker']);
-  var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
-  var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
-  var info = info = {'pbe': '', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
+  var app = angular.module('readHome', []);
+  //var selectTech = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
+  //var engageType = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];
+  var info = {'pbe': '', 'website': '', 'date':'', 'time':'', 'reason':'', 'meeting':'Skype', 'location':'', 'engagement':'', 'crm': '', 'stage': ''};
   var cloudInfo = {'status': '', 'provider':'', 'consumption':'', 'workloads':'', 'vteam':''};
-  var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
-  var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
-  var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
-  var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
-  var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
-  var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
-  var secWorkLoads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
+  //var crmStage = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
+  //var time = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
+ // var status = ['New', 'Experimenting', 'Hybrid', 'Running'];
+  //var provider = ['None','Azure', 'AWS', 'Google', 'Other'];
+ // var consumptionLevel = ['<25k', '25k-99k', '100k-499k', '500k+'];
+ // var workLoads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
+  //var secWorkLoads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
     // The Office initialize function must be run each time a new page is loaded
   Office.initialize = function(reason){
     jQuery(document).ready(function(){
-      /*(Check if the browser supports the date input type
-      if (!Modernizr.inputtypes.date){
-        // Add the jQuery UI DatePicker to all
-        // input tags that have their type attributes
-        // set to 'date'
-        console.log("here");
-        $('input[type=date]').datepicker({
-            // specify the same format as the spec
-            dateFormat: 'mm-dd-yy'
-        });
-      }*/
       
       
       info.pbe = Office.context.mailbox.userProfile.displayName;
@@ -45,45 +34,45 @@
 
     app.controller('FormController', function($scope) {
         info["Technology"] = selectTech[0].type;
-        this.technology = selectTech;
-        this.engagement = engageType;
-        this.cloudInfor = cloudInfo;
+        $scope.technology = [{'type':'Intelligent Cloud', 'url':'../../images/cloud.png', 'alias':'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true}];
+        $scope.engagement = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];;
+        $scope.cloudInfor = {'status': '', 'provider':'', 'consumption':'', 'workloads':'', 'vteam':''};
         this.showTech = true;
-        this.cloudStatus = status;
-        this.cloudProv = provider;
-        this.consumption = consumptionLevel;
-        this.primeWorkloads = workLoads;
-        this.secondWorkloads = secWorkLoads;
-        this.information = info;
-        this.timeOptions = time;
-        this.skype = false;
-        this.intelCloud = true;
-        this.showArrow = true;
-        this.showCont = false;
-        this.ads = false;
-        this.showSubmit = false;
-        this.showBack = false;
-        this.stage = crmStage;
-        this.showMain = true;
-        this.goBack = function() {
-          if (this.showCont) {
-            this.showCont = false;
-            this.showMain = true;
-            this.showArrow = true;
-          } else {
-            this.skype = false;
+        $scope.cloudStatus = ['New', 'Experimenting', 'Hybrid', 'Running'];
+        $scope.cloudProv = ['None','Azure', 'AWS', 'Google', 'Other'];
+        $scope.consumption = ['<25k', '25k-99k', '100k-499k', '500k+'];
+        $scope.primeWorkloads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
+        $scope.secondWorkloads = {'Identity & Access Mgt': false, 'Compute':false, 'Networking':false, 'Storage & DR':false, 'Big Data & SQL':false,'IoT':false,'Advanced Analytics':false, 'PaaS Services':false,'OSS Platforms':false, 'Mobility':false, 'Media Solutions':false};
+        $scope.information = info;
+        $scope.timeOptions = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
+        $scope.skype = false;
+        $scope.intelCloud = true;
+        $scope.showArrow = true;
+        $scope.showCont = false;
+        $scope.ads = false;
+        $scope.showSubmit = false;
+        $scope.showBack = false;
+        $scope.stages = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
+        $scope.showMain = true;
+        $scope.goBack = function() {
+          //if ($scope.showCont) {
+            $scope.showCont = false;
+            $scope.showMain = true;
+            $scope.showArrow = true;
+         /* } else {
+            $scope.skype = false;
             this.showTech = true;
-            this.intelCloud = false;
-            this.showCont = false;
-            this.showMain = false;
-            this.showArray = false;
-            this.showBack = false;
-            this.showArrow = false;
+            $scope.intelCloud = false;
+            $scope.showCont = false;
+            $scope.showMain = false;
+            $scope.showArray = false;
+            $scope.showBack = false;
+            $scope.showArrow = false;
             hideStatus();
-            this.information["Technology"] = "";
+            $scope.information["Technology"] = "";
             reset();
-          }
-          this.showSubmit = false;
+          }*/
+          $scope.showSubmit = false;
         };
        /* this.setTech = function(option) {
           console.log(this.technology[option]);
@@ -101,55 +90,55 @@
           this.showBack = true;
         };*/
 
-        this.setWork = function(option) {
+        $scope.setWork = function(option) {
           option.value = !option.value;
         };
 
-        this.cont = function() {
-          this.showCont = true;
-          this.showBack = true;
-          this.showSubmit = true;
-          this.showMain = false;
-          this.showArrow = false;
+        $scope.cont = function() {
+          $scope.showCont = true;
+          $scope.showBack = true;
+          $scope.showSubmit = true;
+          $scope.showMain = false;
+          $scope.showArrow = false;
         };
 
-        this.addRequest = function() {
-          console.log(this.information);
+        $scope.addRequest = function() {
+          console.log($scope.information);
           var cloudDetails = '';
-          if (this.intelCloud) {
-            cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + this.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
-                            + "<br/><h4>Cloud Provider: </h4>" + this.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
+          if ($scope.intelCloud) {
+            cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
+                            + "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
             var workloadString = "[";
-            for (var key in this.secondWorkloads) {
-              if (this.secondWorkloads[key]) {
+            for (var key in $scope.secondWorkloads) {
+              if ($scope.secondWorkloads[key]) {
                 workloadString += key + ",";
               }
             }
             workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
           }
-          Office.context.mailbox.item.subject.setAsync("[" + this.cloudInfor.vteam + "] Intelligent Cloud TE Request");
-          Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + this.information.website + "<br/><h4>CRM Link: </h4>" + this.information.crm
-                                                      + "<br/><h4>Stage:</h4>" + this.information.stage + "<br/><h4>Engagement Requested: </h4>" 
-                                                      + this.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + this.information.date 
-                                                      + "<br/><h4>Reason:</h4>" + this.information.reason + "<br/><h4>Duration of meeting:</h4>" 
-                                                      + this.information.time + "<br/><h4>Location:</h4>" + this.information.location + "<br/><h4>Meeting:</h4>" 
-                                                      + this.information.meeting + cloudDetails + "<br/><h4>Secondary Workloads:</h4>" + workloadString, {coercionType: "html"});
+          Office.context.mailbox.item.subject.setAsync("[" + $scope.cloudInfor.vteam + "] Intelligent Cloud TE Request");
+          Office.context.mailbox.item.body.setAsync("<h4>Product's Website: </h4>" + $scope.information.website + "<br/><h4>CRM Link: </h4>" + $scope.information.crm
+                                                      + "<br/><h4>Stage:</h4>" + $scope.information.stage + "<br/><h4>Engagement Requested: </h4>" 
+                                                      + $scope.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date 
+                                                      + "<br/><h4>Reason:</h4>" + $scope.information.reason + "<br/><h4>Duration of meeting:</h4>" 
+                                                      + $scope.information.time + "<br/><h4>Location:</h4>" + $scope.information.location + "<br/><h4>Meeting:</h4>" 
+                                                      + $scope.information.meeting + cloudDetails + "<br/><h4>Secondary Workloads:</h4>" + workloadString, {coercionType: "html"});
           //REDUNDANCY EVERYWHERE. NEED TO FIX.                                            
           var payload = { 
                                   "Pbe": info.pbe,
-                                  "Website": this.information.website, 
-                                  "Crm": this.information.crm, 
-                                  "Stage":this.information.stage, 
-                                  "EngagementType":this.information.engagement,
-                                  "Date":this.information.date,
-                                  "Reason":this.information.reason,
-                                  "Location": this.information.location,
-                                  "Meeting": this.information.meeting,
-                                  "Industry":this.cloudInfor.industry,
-                                  "cloudStatus":this.cloudInfor.status,
-                                  "cloudProvider":this.cloudInfor.provider,
-                                  "consumption":this.cloudInfor.consumption,
-                                  "primaryWorkLoad": this.cloudInfor.vteam,
+                                  "Website": information.website, 
+                                  "Crm": information.crm, 
+                                  "Stage": information.stage, 
+                                  "EngagementType": information.engagement,
+                                  "Date": information.date,
+                                  "Reason": information.reason,
+                                  "Location": information.location,
+                                  "Meeting": information.meeting,
+                                  "Industry": cloudInfor.industry,
+                                  "cloudStatus": cloudInfor.status,
+                                  "cloudProvider": cloudInfor.provider,
+                                  "consumption": cloudInfor.consumption,
+                                  "primaryWorkLoad": cloudInfor.vteam,
                                   "secWorkLoads": workloadString
                                 };
                                 
@@ -177,14 +166,14 @@
                    console.log(JSON.stringify(payload));
            }); 
 
-          reset();
-          this.information = info;
-          this.showBack = false;
-          this.workloads = workLoads;
-          this.skype = false;
+          //reset();
+          //$scope.information = info;
+          $scope.showBack = false;
+          $scope.workloads = workLoads;
+          $scope.skype = false;
         };
-        this.canSkype = function() {
-          this.skype = !this.skype;
+        $scope.canSkype = function() {
+          $scope.skype = !$scope.skype;
         };
 
         /*this.goHome = function() {
@@ -211,7 +200,7 @@
       $("#form").show();
     }
 
-    function reset() {
+   function reset() {
       for (var key in info) {
         if (key != "pbe") {
           if (key === "meeting") {
