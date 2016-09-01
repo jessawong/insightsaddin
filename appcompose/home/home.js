@@ -55,7 +55,6 @@
         };
 
         $scope.addRequest = function() {
-          console.log($scope.information);
           var cloudDetails = '';
           if ($scope.intelCloud) {
             cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
