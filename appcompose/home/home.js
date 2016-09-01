@@ -2,14 +2,30 @@
   'use strict';
 
   var app = angular.module('readHome', []);
-  var info = { 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '' };
-  var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '', 'vteam': '' };
+  // TODO: Add drop down for PBE
+  // Alexandra Detweiler
+  // Beverly Ann Smith
+  // Bill Lyle
+  // David Cazel
+  // Frances Calandra
+  // Harsha Vishwanathan
+  // Hong Choing
+  // Jon Box
+  // Kevin Boyle
+  // Micheal Liwanag
+  // Paul Debaun
+  // Tina Prause    
+  // Tony Piltzecker    
+  // Wes Yanage 
+  // Will Tschumy
+  // Sam Chenaur
+  
+  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '' };
+  var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
 
   Office.initialize = function (reason) {
     jQuery(document).ready(function () {
-
-      info.pbe = Office.context.mailbox.userProfile.displayName;
-
+      info.te = Office.context.mailbox.userProfile.displayName;
     });
   };
 
@@ -17,12 +33,10 @@
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ 'type': 'Intelligent Cloud', 'url': '../../images/cloud.png', 'alias': 'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true }];
     $scope.engagement = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];;
-    $scope.cloudInfor = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '', 'vteam': '' };
+    $scope.cloudInfor = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
     $scope.cloudStatus = ['New', 'Experimenting', 'Hybrid', 'Running'];
     $scope.cloudProv = ['None', 'Azure', 'AWS', 'Google', 'Other'];
     $scope.consumption = ['<25k', '25k-99k', '100k-499k', '500k+'];
-    $scope.primeWorkloads = ['Modern Datacenter(IT Pro)', 'Data Platform & Analytics', 'Modern Apps (Cloud Dev)'];
-    $scope.secondWorkloads = { 'Identity & Access Mgt': false, 'Compute': false, 'Networking': false, 'Storage & DR': false, 'Big Data & SQL': false, 'IoT': false, 'Advanced Analytics': false, 'PaaS Services': false, 'OSS Platforms': false, 'Mobility': false, 'Media Solutions': false };
     $scope.workloads = { 'Identity & Access Mgt': false, 'Compute': false, 'Networking': false, 'Storage & DR': false, 'Big Data & SQL': false, 'IoT': false, 'Advanced Analytics': false, 'PaaS Services': false, 'OSS Platforms': false, 'Mobility': false, 'Media Solutions': false };
     $scope.information = info;
     $scope.timeOptions = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
@@ -68,17 +82,28 @@
         }
         workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
       }
-      Office.context.mailbox.item.subject.setAsync("[" + $scope.cloudInfor.vteam + "] Intelligent Cloud TE Request");
-      // TODO: Update mail body with new shcema information
-      Office.context.mailbox.item.body.setAsync("<h4>SI: </h4>" + $scope.information.si + "<h4>ISV: </h4>" + $scope.information.isv + "<h4>Product's Website: </h4>" + $scope.information.website + "<br/><h4>CRM Link: </h4>" + $scope.information.crm
-        + "<br/><h4>Stage:</h4>" + $scope.information.stage + "<br/><h4>Engagement Requested: </h4>"
-        + $scope.information.engagement + "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date
-        + "<br/><h4>Reason:</h4>" + $scope.information.reason + "<br/><h4>Duration of meeting:</h4>"
-        + $scope.information.time + "<br/><h4>Location:</h4>" + $scope.information.location + "<br/><h4>Meeting:</h4>"
-        + $scope.information.meeting + cloudDetails + "<br/><h4>Workloads:</h4>" + workloadString, { coercionType: "html" });
-      
+      Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+      Office.context.mailbox.item.body.setAsync(
+        "<h4>PBE: </h4>" + $scope.information.pbe +
+        "<h4>SI: </h4>" + $scope.information.si +
+        "<h4>ISV: </h4>" + $scope.information.isv +
+        "<h4>Product's Website: </h4>" + $scope.information.website +
+        "<br/><h4>CRM Link: </h4>" + $scope.information.crm +
+        "<br/><h4>Stage:</h4>" + $scope.information.stage +
+        "<br/><h4>Engagement Requested: </h4>" + $scope.information.engagement +
+        "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date +
+        "<br/><h4>Reason:</h4>" + $scope.information.reason +
+        "<br/><h4>Duration of meeting:</h4>" + $scope.information.time +
+        "<br/><h4>Location:</h4>" + $scope.information.location +
+        "<br/><h4>Meeting:</h4>" + $scope.information.meeting + cloudDetails +
+        "<br/><h4>Workloads:</h4>" + workloadString, { coercionType: "html" }
+      );
+
+      // TODO: Add drop down for industry
+      // retail, public sector, mining, dev tools, health care, insurance, oil and gas, storage, education, CDN, sharepoint, retail, finance, 
       var payload = {
-        "Pbe": info.pbe,
+        "TE": info.te,
+        "PBE": $scope.information.pbe,
         "SI": $scope.information.si,
         "ISV": $scope.information.isv,
         "Website": $scope.information.website,
