@@ -31,14 +31,6 @@
   <script src="home.js"></script>
 </head>
 
-<!--<body id="main" ng-app="readHome" ng-controller="FormController as formCtrl">
-  <div ng-show="formCtrl.showTech" class="center" id="content-main">
-    <div id="background"></div>
-    <div class="resourceButton" id="cloud" ng-click="formCtrl.setTech(0)">
-      <img class="valign" ng-src="../../images/cloudOverlay.png"></img>
-    </div>
-
-  </div>-->
 <body ng-app="readHome">
   <div id="main" ng-controller="FormController as formCtrl">
     <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
@@ -46,10 +38,14 @@
       <h2 class="ms-font-xl">{{information.Technology}}</h2>
       <div ng-show="showMain">
         <div class="ms-Grid">
-          <!--<div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requestor:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" id="pbeName" ng-model="formCtrl.information.pbe"></input></div>
-          </div>-->
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input></div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input></div>
+          </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.website"></input></div>
@@ -97,9 +93,15 @@
             </div>
           </div>
           <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Location of partner:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">City of partner:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <input type="text" ng-model="information.location"></input>
+              <input type="text" ng-model="information.city"></input>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">State of partner:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <input type="text" ng-model="information.state"></input>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -150,19 +152,11 @@
           </div>
         </div>
         <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Primary Workload:</div>
+          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Workloads:</div>
         </div>
-        <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-          <select ng-model="cloudInfor.vteam">
-            <option ng-repeat="work in primeWorkloads">{{work}}</option>
-          </select>
-        </div>
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Secondary Workloads:</div>
-        </div>
-        <div ng-repeat="(key, value) in secondWorkloads" class="ms-Grid=row">
+        <div ng-repeat="(key, value) in workloads" class="ms-Grid=row">
           <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-            <input type="checkbox" name="load" ng-model="secondWorkloads[key]">{{key}}
+            <input type="checkbox" name="load" ng-model="workloads[key]">{{key}}
           </div>
         </div>
       </div>
