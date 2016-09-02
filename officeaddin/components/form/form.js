@@ -1,8 +1,8 @@
 (function () {
+
   'use strict';
 
-  var app = angular.module('readHome', []);
-  // TODO: Add drop down for PBE
+// TODO: Add drop down for PBE
   // Alexandra Detweiler
   // Beverly Ann Smith
   // Bill Lyle
@@ -19,7 +19,9 @@
   // Wes Yanage 
   // Will Tschumy
   // Sam Chenaur
-  
+
+  var app = angular.module('readHome', []);
+
   var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '' };
   var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
 
@@ -30,6 +32,16 @@
   };
 
   app.controller('FormController', function ($scope) {
+    
+    $scope.formFields = [
+      {
+        CrystalGem: "Steven"
+      },
+      {
+        Diamond: "Pink"
+      }
+    ];
+
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ 'type': 'Intelligent Cloud', 'url': '../../images/cloud.png', 'alias': 'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true }];
     $scope.engagement = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];;
@@ -72,8 +84,10 @@
     $scope.addRequest = function () {
       var cloudDetails = '';
       if ($scope.intelCloud) {
-        cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry + "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status
-          + "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider + "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
+        cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry + 
+        "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status + 
+        "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider + 
+        "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
         var workloadString = "[";
         for (var key in $scope.workloads) {
           if ($scope.workloads[key]) {
@@ -82,6 +96,7 @@
         }
         workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
       }
+      
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       Office.context.mailbox.item.body.setAsync(
         "<h4>PBE: </h4>" + $scope.information.pbe +
