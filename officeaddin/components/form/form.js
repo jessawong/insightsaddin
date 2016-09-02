@@ -32,8 +32,8 @@
     $scope.showSubmit = false;
     $scope.showBack = false;
     $scope.stages = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
-    $scope.pbes = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
-    //$scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
+    // $scope.pbes = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
+    $scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
     $scope.showMain = true;
     $scope.goBack = function () {
       $scope.showCont = false;
