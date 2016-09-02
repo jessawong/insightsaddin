@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsightsaddinWebApp", "InsightsaddinWebApp\InsightsaddinWebApp.csproj", "{33724342-6524-4F2B-9A0B-BD586EDA7674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsightsaddinWebApp.Tests", "InsightsaddinWebApp.Tests\InsightsaddinWebApp.Tests.csproj", "{105D6E36-AF19-411E-B70B-A8A727038EC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33724342-6524-4F2B-9A0B-BD586EDA7674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33724342-6524-4F2B-9A0B-BD586EDA7674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33724342-6524-4F2B-9A0B-BD586EDA7674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33724342-6524-4F2B-9A0B-BD586EDA7674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105D6E36-AF19-411E-B70B-A8A727038EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105D6E36-AF19-411E-B70B-A8A727038EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105D6E36-AF19-411E-B70B-A8A727038EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105D6E36-AF19-411E-B70B-A8A727038EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
