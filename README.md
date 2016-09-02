@@ -1,6 +1,6 @@
 # Insights Addin
 
-![alt tag](http://stephanefrechette.com/blog/wp-content/uploads/2015/08/azurecloud.png)
+![alt tag](https://raw.githubusercontent.com/jessawong/insightsaddin/dev/officeaddin/assets/images/azurecloud.png)
 
 ## Team
   * Greg Degruy (https://github.com/gregdegruy)
