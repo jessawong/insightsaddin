@@ -4,7 +4,7 @@
 
   var app = angular.module('readHome', []);
 
-  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '', 'pbee': ''};
+  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '', 'test': ''};
   var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
 
   Office.initialize = function (reason) {
@@ -32,7 +32,7 @@
     $scope.showSubmit = false;
     $scope.showBack = false;
     $scope.stages = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
-    $scope.pbees = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
+    $scope.tests = ['30 min', '60 min', '90 min', '120 min', '2+ hours'];
     //$scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
     $scope.showMain = true;
     $scope.goBack = function () {
@@ -79,7 +79,7 @@
         "<h4>Product's Website: </h4>" + $scope.information.website +
         "<br/><h4>CRM Link: </h4>" + $scope.information.crm +
         "<br/><h4>Stage:</h4>" + $scope.information.stage +
-        "<br/><h4>Pbee:</h4>" + $scope.information.pbee +
+        "<br/><h4>Test:</h4>" + $scope.information.test +
         "<br/><h4>Engagement Requested: </h4>" + $scope.information.engagement +
         "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date +
         "<br/><h4>Reason:</h4>" + $scope.information.reason +
@@ -99,6 +99,7 @@
         "Website": $scope.information.website,
         "Crm": $scope.information.crm,
         "Stage": $scope.information.stage,
+        "Test": $scope.information.test,
         "Pbee": $scope.information.pbee,
         "EngagementType": $scope.information.engagement,
         "Date": $scope.information.date,
