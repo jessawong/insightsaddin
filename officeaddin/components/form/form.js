@@ -32,7 +32,6 @@
   };
 
   app.controller('FormController', function ($scope) {
-
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ 'type': 'Intelligent Cloud', 'url': '../../images/cloud.png', 'alias': 'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true }];
     $scope.engagement = ['Briefing', 'Envisioning', 'ADS', 'Hackfest/PoC', 'Other'];;
