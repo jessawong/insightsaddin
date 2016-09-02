@@ -2,9 +2,9 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
   <Id>ece3fb02-c131-4f1f-bf2b-b55b9d9f8530</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Jessica Wong</ProviderName>
+  <ProviderName>Jessica Wong, Greg Degruy, Nate Rose</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Insights-Staging"/>
+  <DisplayName DefaultValue="Insights Staging"/>
   <Description DefaultValue="Easily send a request for an Azure TE"/>
   <HighResolutionIconUrl DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/assets/images/icon-80.png"/>
   <Hosts>
