@@ -79,7 +79,7 @@
         "<h4>Product's Website: </h4>" + $scope.information.website +
         "<br/><h4>CRM Link: </h4>" + $scope.information.crm +
         "<br/><h4>Stage:</h4>" + $scope.information.stage +
-        "<br/><h4>Pbees:</h4>" + $scope.information.pbee +
+        "<br/><h4>Pbee:</h4>" + $scope.information.pbee +
         "<br/><h4>Engagement Requested: </h4>" + $scope.information.engagement +
         "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date +
         "<br/><h4>Reason:</h4>" + $scope.information.reason +
