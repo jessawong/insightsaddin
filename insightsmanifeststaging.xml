@@ -6,7 +6,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Insights-Staging"/>
   <Description DefaultValue="Easily send a request for an Azure TE"/>
-  <HighResolutionIconUrl DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/assets/images/icon-80.png"/>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
@@ -18,7 +18,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
+        <SourceLocation DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/components/form/form.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -57,13 +57,13 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-32.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://insightsaddinstaging.azurewebsites.net/images/icon-80.png"/>
+        <bt:Image id="icon-16" DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/assets/images/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/assets/images/icon-32.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/assets/images/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="funcFile" DefaultValue="https://insightsaddinstaging.azurewebsites.net/FunctionFile/Functions.html"/>
-        <bt:Url id="composePaneUrl" DefaultValue="https://insightsaddinstaging.azurewebsites.net/appcompose/home/home.html"/>
+        <bt:Url id="composePaneUrl" DefaultValue="https://insightsaddinstaging.azurewebsites.net/officeaddin/components/form/form.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Insights"/>

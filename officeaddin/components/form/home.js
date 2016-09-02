@@ -99,7 +99,7 @@
         "<br/><h4>Workloads:</h4>" + workloadString, { coercionType: "html" }
       );
 
-      // TODO: Add drop down for industry
+      // TODO: Add drop down for industry verticals
       // retail, public sector, mining, dev tools, health care, insurance, oil and gas, storage, education, CDN, sharepoint, retail, finance, 
       var payload = {
         "TE": info.te,
