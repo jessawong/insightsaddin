@@ -35,10 +35,19 @@
         <div class="ms-Grid">
       
           <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Test:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
               <select ng-model="information.test">
                 <option ng-repeat="test in tests">{{test}}</option>
+              </select>
+            </div>
+          </div>
+
+           <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="information.stage">
+                <option ng-repeat="stage in stages">{{stage}}</option>
               </select>
             </div>
           </div>
@@ -63,14 +72,7 @@
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.crm"></input>
             </div>
           </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <select ng-model="information.stage">
-                <option ng-repeat="stage in stages">{{stage}}</option>
-              </select>
-            </div>
-          </div>
+         
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
