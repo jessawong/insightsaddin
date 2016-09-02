@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
-  <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
+
+  <!-- Scrolls -->
+  <link href="../../assets/css/Office.css" rel="stylesheet" type="text/css" />
   <link href="../../bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" type="text/css" />
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet"/>
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet"/>
+  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet" />
+  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet" />
+  <link href="https://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css"
+  />
+  <link href="../app.css" rel="stylesheet" type="text/css" />
+  <link href="form.css" rel="stylesheet" type="text/css" />
+
+  <!-- Spells -->
+  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="../../scripts/servicebusjssdk-1.2.js"/>
-  <link href="https://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/redmond/jquery-ui.css"
-    rel="stylesheet" type="text/css" />
- 
-  <script src="../../scripts/MicrosoftAjax.js"></script>
-
-
-  <link href="../app.css" rel="stylesheet" type="text/css" />
+  <script src="../../assets/js/servicebusjssdk-1.2.js" />
+  <script src="../../assets/js/MicrosoftAjax.js"></script>
   <script src="../app.js"></script>
-
-  <link href="form.css" rel="stylesheet" type="text/css" />
   <script src="form.js"></script>
 </head>
 
@@ -34,23 +35,28 @@
         <div class="ms-Grid">
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">PBE:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.pbe"></input></div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.pbe"></input>
+            </div>
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input></div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input>
+            </div>
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input></div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input>
+            </div>
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.website"></input></div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.website"></input>
+            </div>
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">CRM Link:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.crm"></input></div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.crm"></input>
+            </div>
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
@@ -71,7 +77,7 @@
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Requested Date for Engagement:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-                <input type="date" ng-model="information.date"></input>
+              <input type="date" ng-model="information.date"></input>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -79,7 +85,8 @@
           </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-              <textarea  id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, funding or any other type of relevant information here." ng-model="information.reason"></textarea>
+              <textarea id="postEngage" placeholder="Give information about sponsors, timeline to finish, biz and dev lead, funding or any other type of relevant information here."
+                ng-model="information.reason"></textarea>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -161,14 +168,17 @@
       <button ng-show="showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>
     </form>
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
-      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please hit "send" and someone from the v-team will get back to you within 24 hours.<br/>
+      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please hit "send" and someone from the v-team will get
+      back to you within 24 hours.<br/>
       <!--<div class="resourceButton">
         <button class="ms-Button" ng-click="formCtrl.goHome()">Home</button>
       </div>-->
     </div>
     <div id="error" class="ms-fontWeight-semilight ms-fontColor-error">
-      <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with details of your steps to reproduce the error.
+      <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with
+      details of your steps to reproduce the error.
     </div>
   </div>
 </body>
+
 </html>
