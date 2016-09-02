@@ -33,23 +33,27 @@
       <h2 class="ms-font-xl">{{information.Technology}}</h2>
       <div ng-show="showMain">
         <div class="ms-Grid">
-          <div class="ms-Grid-row">
+
+         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">PBE:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.pbe"></input>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="information.pbe">
+                <option ng-repeat="pbe in pbes">{{pbe}}</option>
+              </select>
             </div>
-          </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input>
-            </div>
-          </div>
+          </div>        
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input>
             </div>
           </div>
+           <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input>
+            </div>
+          </div>
           <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Product's Website Link:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.website"></input>
             </div>
           </div>

@@ -1,24 +1,6 @@
 (function () {
 
-  'use strict';
-
-// TODO: Add drop down for PBE
-  // Alexandra Detweiler
-  // Beverly Ann Smith
-  // Bill Lyle
-  // David Cazel
-  // Frances Calandra
-  // Harsha Vishwanathan
-  // Hong Choing
-  // Jon Box
-  // Kevin Boyle
-  // Micheal Liwanag
-  // Paul Debaun
-  // Tina Prause    
-  // Tony Piltzecker    
-  // Wes Yanage 
-  // Will Tschumy
-  // Sam Chenaur
+  "use strict";
 
   var app = angular.module('readHome', []);
 
@@ -50,6 +32,7 @@
     $scope.showSubmit = false;
     $scope.showBack = false;
     $scope.stages = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
+    $scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
     $scope.showMain = true;
     $scope.goBack = function () {
       $scope.showCont = false;
@@ -105,7 +88,7 @@
       );
 
       // TODO: Add drop down for industry verticals
-      // retail, public sector, mining, dev tools, health care, insurance, oil and gas, storage, education, CDN, sharepoint, retail, finance, 
+      // manufacturing, public sector, mining, dev tools, cross industry, health care, insurance, oil and gas, education, CDN, retail, finance services
       var payload = {
         "TE": info.te,
         "PBE": $scope.information.pbe,
