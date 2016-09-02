@@ -30,11 +30,7 @@
   <div id="main" ng-controller="FormController as formCtrl">
     <!---->
     <h2>Testing</h2>
-    <div ng-repeat="field in formFields">
-      <div>
-        {{field}}
-      </div>
-    </div>
+    
     <!---->
     <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-submit="addRequest()">
@@ -176,7 +172,7 @@
       <button ng-show="showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>
     </form>
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
-      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please hit "send" and someone from the v-team will get
+      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please send your email and someone from the V-Team will get
       back to you within 24 hours.<br/>
       <!--<div class="resourceButton">
         <button class="ms-Button" ng-click="formCtrl.goHome()">Home</button>

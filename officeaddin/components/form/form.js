@@ -32,15 +32,6 @@
   };
 
   app.controller('FormController', function ($scope) {
-    
-    $scope.formFields = [
-      {
-        CrystalGem: "Steven"
-      },
-      {
-        Diamond: "Pink"
-      }
-    ];
 
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ 'type': 'Intelligent Cloud', 'url': '../../images/cloud.png', 'alias': 'usdxrisvintelligentcloudteam@service.microsoft.com', 'fadeUrl': '../../images/cloudOverlay.png', 'intel': true }];
