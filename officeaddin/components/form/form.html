@@ -34,20 +34,30 @@
       <div ng-show="showMain">
         <div class="ms-Grid">
 
-         <div class="ms-Grid-row">
+          <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">PBE:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
               <select ng-model="information.pbe">
                 <option ng-repeat="pbe in pbes">{{pbe}}</option>
               </select>
             </div>
-          </div>        
+          </div>
+
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="information.time">
+                <option ng-repeat="time in timeOptions">{{time}}</option>
+              </select>
+            </div>
+          </div>
+
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input>
             </div>
           </div>
-           <div class="ms-Grid-row">
+          <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input>
             </div>
@@ -172,8 +182,8 @@
       <button ng-show="showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>
     </form>
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
-      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please send your email and someone from the V-Team will get
-      back to you within 24 hours.<br/>
+      <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please send your email and someone from the V-Team will
+      get back to you within 24 hours.<br/>
       <!--<div class="resourceButton">
         <button class="ms-Button" ng-click="formCtrl.goHome()">Home</button>
       </div>-->
