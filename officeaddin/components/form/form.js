@@ -125,17 +125,17 @@
           "state": $scope.information.state,
           "workLoads":
           {
-            "Advanced Analytics": false,
-            "Big Data & SQL": false,
-            "Compute": false,
-            "Identity & Access Mgt": false,
-            "IoT": false,
-            "Media Solutions": false,
-            "Mobility": false,
-            "Networking": false,
-            "OSS Platforms": false,
-            "PaaS Services": false,
-            "Storage & DR": false
+            "Advanced Analytics": $scope.workloads["Advanced Analytics"],
+            "Big Data & SQL": $scope.workloads["Big Data & SQL"],
+            "Compute": $scope.workloads["Compute"],
+            "Identity & Access Mgt": $scope.workloads["Identity & Access Mgt"],
+            "IoT": $scope.workloads["IoT"],
+            "Media Solutions": $scope.workloads["Media Solutions"],
+            "Mobility": $scope.workloads["Mobility"],
+            "Networking": $scope.workloads["Networking"],
+            "OSS Platforms": $scope.workloads["OSS Platforms"],
+            "PaaS Services": $scope.workloads["PaaS Services"],
+            "Storage & Disaster Recovery": $scope.workloads["Storage & Disaster Recovery"]
           },
           "engagement":
           {
