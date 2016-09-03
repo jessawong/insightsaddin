@@ -31,11 +31,9 @@
     <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-submit="addRequest()">
       <h2 class="ms-font-xl">{{information.Technology}}</h2>
+      <!-- main information -->
       <div ng-show="showMain">
         <div class="ms-Grid">
-      
-          
-
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">PBE:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
@@ -44,24 +42,14 @@
               </select>
             </div>
           </div>
-
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <select ng-model="information.stage">
-                <option ng-repeat="stage in stages">{{stage}}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input>
-            </div>
-          </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">ISV:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.isv"></input>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">SI:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.si"></input>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -74,7 +62,26 @@
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9"><input type="text" ng-model="information.crm"></input>
             </div>
           </div>
-         
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <select ng-model="information.stage">
+                <option ng-repeat="stage in stages">{{stage}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">City of partner:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <input type="text" ng-model="information.city"></input>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">State of partner:</div>
+            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
+              <input type="text" ng-model="information.state"></input>
+            </div>
+          </div>
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
             <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
@@ -107,18 +114,6 @@
             </div>
           </div>
           <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">City of partner:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <input type="text" ng-model="information.city"></input>
-            </div>
-          </div>
-          <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">State of partner:</div>
-            <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-              <input type="text" ng-model="information.state"></input>
-            </div>
-          </div>
-          <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
               <input type="checkbox" checked="checked" ng-click="canSkype()"></input> Skype meeting acceptable
             </div>
@@ -131,6 +126,7 @@
           </div>
         </div>
       </div>
+      <!-- page 2 cloud information -->
       <div ng-click="cont()" ng-show="showArrow" id="cont">
         <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl link" aria-hidden="true"></i>
       </div>
@@ -179,9 +175,6 @@
     <div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
       <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please send your email and someone from the V-Team will
       get back to you within 24 hours.<br/>
-      <!--<div class="resourceButton">
-        <button class="ms-Button" ng-click="formCtrl.goHome()">Home</button>
-      </div>-->
     </div>
     <div id="error" class="ms-fontWeight-semilight ms-fontColor-error">
       <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with

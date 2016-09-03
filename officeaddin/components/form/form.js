@@ -4,7 +4,7 @@
 
   var app = angular.module('readHome', []);
 
-  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': ''};
+  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '' };
   var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
 
   Office.initialize = function (reason) {
@@ -57,10 +57,10 @@
     $scope.addRequest = function () {
       var cloudDetails = '';
       if ($scope.intelCloud) {
-        cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry + 
-        "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status + 
-        "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider + 
-        "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
+        cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry +
+          "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status +
+          "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider +
+          "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;
         var workloadString = "[";
         for (var key in $scope.workloads) {
           if ($scope.workloads[key]) {
@@ -69,7 +69,7 @@
         }
         workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
       }
-      
+
       Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
       Office.context.mailbox.item.body.setAsync(
         "<h4>PBE: </h4>" + $scope.information.pbe +
@@ -90,26 +90,33 @@
 
       // TODO: Add drop down for industry verticals
       // manufacturing, public sector, mining, dev tools, cross industry, health care, insurance, oil and gas, education, CDN, retail, finance services
-      var payload = {
-        "TE": info.te,
-        "PBE": $scope.information.pbe,
-        "SI": $scope.information.si,
-        "ISV": $scope.information.isv,
-        "Website": $scope.information.website,
-        "Crm": $scope.information.crm,
-        "Test": $scope.information.test,
-        "EngagementType": $scope.information.engagement,
-        "Date": $scope.information.date,
-        "Reason": $scope.information.reason,
-        "City": $scope.information.city,
-        "State": $scope.information.state,
-        "Meeting": $scope.information.meeting,
-        "Industry": $scope.cloudInfor.industry,
-        "cloudStatus": $scope.cloudInfor.status,
-        "cloudProvider": $scope.cloudInfor.provider,
-        "consumption": $scope.cloudInfor.consumption,
-        "workLoads": workloadString
-      };
+      var payload =
+        {
+          "te": info.te,
+          "pbe": $scope.information.pbe,
+          "isv": $scope.information.isv,
+          "si": $scope.information.si,
+          "isvWebsite": $scope.information.website,
+          "crmLink": $scope.information.crm,
+          "stage": $scope.information.stage,
+          "city": $scope.information.city,
+          "state": $scope.information.state,
+          "workLoads":
+          {
+            "workloadString": workloadString
+          },
+          "engagement":
+          {
+            "date": $scope.information.date,
+            "engagement": $scope.information.engagement,
+            "meeting": $scope.information.meeting
+          },
+          "industry": $scope.cloudInfor.industry,
+          "industryWorkload": $scope.cloudInfor.industryWorkload,
+          "cloudStatus": $scope.cloudInfor.status,
+          "cloudProvider": $scope.cloudInfor.provider,
+          "consumption": $scope.cloudInfor.consumption
+        };
 
       var namespace = "insightsaddin-eh";
       var hubname = "insights-eh";
