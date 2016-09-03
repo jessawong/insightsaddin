@@ -45,7 +45,7 @@
     $scope.cloudStatus = ["New", "Experimenting", "Hybrid", "Running"];
     $scope.cloudProv = ["None", "Azure", "AWS", "Google", "Other"];
     $scope.consumption = ["<25k", "25k-99k", "100k-499k", "500k+"];
-    $scope.workloads = { "Identity & Access Mgt": false, "Compute": false, "Networking": false, "Storage & DR": false, "Big Data & SQL": false, "IoT": false, "Advanced Analytics": false, "PaaS Services": false, "OSS Platforms": false, "Mobility": false, "Media Solutions": false };
+    $scope.workloads = { "Advanced Analytics": false, "Big Data & SQL": false, "Compute": false, "Identity & Access Mgt": false, "IoT": false, "Media Solutions": false, "Mobility": false, "Networking": false, "OSS Platforms": false, "PaaS Services": false, "Storage & DR": false };
     $scope.information = info;
     $scope.timeOptions = ["30 min", "60 min", "90 min", "120 min", "2+ hours"];
     $scope.skype = false;
@@ -57,7 +57,7 @@
     $scope.showBack = false;
     $scope.stages = ["0%", "10%", "20%", "40%", "60%", "80%", "95%", "100%"];
     $scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
-    $scope.industries = ["CDN", "Cross Industry", "Dev Tools", "Education", "Finance Services", "Health Care", "Insurance", "Manufacturing", "Mining", "Oil and Gas", "Public Sector", "Retail"];   
+    $scope.industries = ["CDN", "Cross Industry", "Dev Tools", "Education", "Finance Services", "Health Care", "Insurance", "Manufacturing", "Mining", "Oil and Gas", "Public Sector", "Retail"];
     $scope.showMain = true;
     $scope.goBack = function () {
       $scope.showCont = false;
@@ -125,13 +125,24 @@
           "state": $scope.information.state,
           "workLoads":
           {
-            "workloadString": workloadString
+            "Advanced Analytics": false,
+            "Big Data & SQL": false,
+            "Compute": false,
+            "Identity & Access Mgt": false,
+            "IoT": false,
+            "Media Solutions": false,
+            "Mobility": false,
+            "Networking": false,
+            "OSS Platforms": false,
+            "PaaS Services": false,
+            "Storage & DR": false
           },
           "engagement":
           {
             "date": $scope.information.date,
+            "notes": "notes",
+            "meeting": $scope.information.meeting,
             "type": $scope.information.engagement,
-            "meeting": $scope.information.meeting
           },
           "industry": $scope.cloudInfor.industry,
           "industryWorkload": $scope.cloudInfor.industryWorkload,
