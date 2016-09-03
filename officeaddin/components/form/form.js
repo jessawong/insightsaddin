@@ -125,17 +125,17 @@
           "state": $scope.information.state,
           "workLoads":
           {
-            "Advanced Analytics": $scope.workloads["Advanced Analytics"],
-            "Big Data & SQL": $scope.workloads["Big Data & SQL"],
-            "Compute": $scope.workloads["Compute"],
-            "Identity & Access Mgt": $scope.workloads["Identity & Access Mgt"],
-            "IoT": $scope.workloads["IoT"],
-            "Media Solutions": $scope.workloads["Media Solutions"],
-            "Mobility": $scope.workloads["Mobility"],
-            "Networking": $scope.workloads["Networking"],
-            "OSS Platforms": $scope.workloads["OSS Platforms"],
-            "PaaS Services": $scope.workloads["PaaS Services"],
-            "Storage & Disaster Recovery": $scope.workloads["Storage & Disaster Recovery"]
+            "Advanced Analytics": ( $scope.workloads["Advanced Analytics"] == 1 ? true : false  ),
+            "Big Data & SQL": ( $scope.workloads["Big Data & SQL"] == 1 ? true : false  ),
+            "Compute": ( $scope.workloads["Compute"] == 1 ? true : false  ),
+            "Identity & Access Mgt": ( $scope.workloads["Identity & Access Mgt"] == 1 ? true : false  ),
+            "IoT": ( $scope.workloads["IoT"] == 1 ? true : false  ),
+            "Media Solutions": ( $scope.workloads["Media Solutions"] == 1 ? true : false  ),
+            "Mobility": ( $scope.workloads["Mobility"] == 1 ? true : false  ),
+            "Networking": ( $scope.workloads["Networking"] == 1 ? true : false  ),
+            "OSS Platforms": ( $scope.workloads["OSS Platforms"] == 1 ? true : false  ),
+            "PaaS Services": ( $scope.workloads["PaaS Services"] == 1 ? true : false  ),
+            "Storage & Disaster Recovery": ( $scope.workloads["Storage & Disaster Recovery"] == 1 ? true : false  )
           },
           "engagement":
           {
