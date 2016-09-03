@@ -4,8 +4,33 @@
 
   var app = angular.module('readHome', []);
 
-  var info = { 'te': '', 'pbe': '', 'si': '', 'isv': '', 'website': '', 'date': '', 'time': '', 'reason': '', 'meeting': 'Skype', 'city': '', 'state': '', 'engagement': '', 'crm': '', 'stage': '' };
-  var cloudInfo = { 'status': '', 'provider': '', 'consumption': '', 'workloads': '' };
+  var info =
+    {
+      "te": "",
+      "pbe": "",
+      "isv": "",
+      "si": "",
+      "isvWebsite": "",
+      "crmLink": "",
+      "stage": "",
+      "city": "",
+      "state": "",
+      "date": "",
+      "time": "",
+      "reason": "",
+      "meeting": "Skype",
+      "engagement": ""
+    };
+
+  var cloudInfo =
+    {
+      "industry": "",
+      "industryWorkload": "",
+      "status": "",
+      "provider": "",
+      "consumption": "",
+      "workloads": ""
+    };
 
   Office.initialize = function (reason) {
     jQuery(document).ready(function () {
@@ -33,6 +58,7 @@
     $scope.showBack = false;
     $scope.stages = ['0%', '10%', '20%', '40%', '60%', '80%', '95%', '100%'];
     $scope.pbes = ["Alexandra Detweiler", "Beverly Ann Smith", "Bill Lyle", "David Cazel", "Frances Calandra", "Harsha Vishwanathan", "Hong Choing", "Jon Box", "Kevin Boyle", "Micheal Liwanag", "Paul Debaun", "Tina Prause", "Tony Piltzecker", "Wes Yanage", "Will Tschumy", "Sam Chenaur"];
+    $scope.industries = ["CDN", "Cross Industry", "Dev Tools", "Education", "Finance Services", "Health Care", "Insurance", "Manufacturing", "Mining", "Oil and Gas", "Public Sector", "Retail"];   
     $scope.showMain = true;
     $scope.goBack = function () {
       $scope.showCont = false;
@@ -75,8 +101,8 @@
         "<h4>PBE: </h4>" + $scope.information.pbe +
         "<h4>SI: </h4>" + $scope.information.si +
         "<h4>ISV: </h4>" + $scope.information.isv +
-        "<h4>Product's Website: </h4>" + $scope.information.website +
-        "<br/><h4>CRM Link: </h4>" + $scope.information.crm +
+        "<h4>ISV Website: </h4>" + $scope.information.isvWebsite +
+        "<br/><h4>CRM Link: </h4>" + $scope.information.crmLink +
         "<br/><h4>Stage:</h4>" + $scope.information.stage +
         "<br/><h4>PBE:</h4>" + $scope.information.pbe +
         "<br/><h4>Engagement Requested: </h4>" + $scope.information.engagement +
@@ -88,16 +114,14 @@
         "<br/><h4>Workloads:</h4>" + workloadString, { coercionType: "html" }
       );
 
-      // TODO: Add drop down for industry verticals
-      // manufacturing, public sector, mining, dev tools, cross industry, health care, insurance, oil and gas, education, CDN, retail, finance services
       var payload =
         {
           "te": info.te,
           "pbe": $scope.information.pbe,
           "isv": $scope.information.isv,
           "si": $scope.information.si,
-          "isvWebsite": $scope.information.website,
-          "crmLink": $scope.information.crm,
+          "isvWebsite": $scope.information.isvWebsite,
+          "crmLink": $scope.information.crmLink,
           "stage": $scope.information.stage,
           "city": $scope.information.city,
           "state": $scope.information.state,
@@ -108,7 +132,7 @@
           "engagement":
           {
             "date": $scope.information.date,
-            "engagement": $scope.information.engagement,
+            "type": $scope.information.engagement,
             "meeting": $scope.information.meeting
           },
           "industry": $scope.cloudInfor.industry,
