@@ -37,7 +37,9 @@
 
   var app = angular.module("insightsOfficeApp", []);
 
-  app.controller("FormController", function ($scope) {
+  app.controller("formController", formController);
+
+  function formController($scope) {
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ "type": "Intelligent Cloud", "url": "../../images/cloud.png", "alias": "usdxrisvintelligentcloudteam@service.microsoft.com", "fadeUrl": "../../images/cloudOverlay.png", "intel": true }];
     $scope.engagement = ["Briefing", "Envisioning", "ADS", "Hackfest/PoC", "Other"];;
@@ -183,8 +185,7 @@
     $scope.canSkype = function () {
       $scope.skype = !$scope.skype;
     };
-
-  });
+  };
 
   function showStatus(domId) {
     $("#form").hide();
