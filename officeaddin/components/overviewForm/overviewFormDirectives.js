@@ -6,9 +6,7 @@
 
   app.directive("overviewForm", function() {
         return {
-            templateUrl: "components/overviewForm/overviewFormView.html",
-            controller: "FormController",
-            controllerAs: "formCtrl"
+            templateUrl: "components/overviewForm/overviewFormView.html"
         };
     });   
 })();
