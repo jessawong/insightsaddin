@@ -1,4 +1,4 @@
-var app = angular.module("insightsOfficeApp");
+var app = angular.module("insightsOfficeApp", []);
 
 app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 

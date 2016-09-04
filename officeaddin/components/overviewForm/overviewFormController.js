@@ -35,7 +35,7 @@
     });
   };
 
-  var app = angular.module("insightsOfficeApp", []);
+  var app = angular.module("insightsOfficeApp");
 
   app.controller("formController", formController);
 
