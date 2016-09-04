@@ -1,7 +1,7 @@
 <div id="main" ng-controller="FormController as formCtrl">
   <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
   <form id="form" class="center" ng-submit="addRequest()">
-    <h2 class="ms-font-xl">{{formCtrl.information.Technology}}</h2>
+    <h2 class="ms-font-xl">{{information.Technology}}</h2>
     <!-- main information -->
     <div ng-show="showMain">
       <div class="ms-Grid">
@@ -9,7 +9,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">PBE:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="information.pbe">
-                <option ng-repeat="pbe in pbes">{{formCtrl.pbe}}</option>
+                <option ng-repeat="pbe in pbes">{{pbe}}</option>
               </select>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Stage:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="information.stage">
-                <option ng-repeat="stage in stages">{{formCtrl.stage}}</option>
+                <option ng-repeat="stage in stages">{{stage}}</option>
               </select>
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Engagement Requested:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="information.engagement">
-                <option ng-repeat="engage in engagement">{{formCtrl.engage}}</option>
+                <option ng-repeat="engage in engagement">{{engage}}</option>
               </select>
           </div>
         </div>
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">What outcomes does the partner have in releasing their solution on our {{formCtrl.information.Technology}} platform?</div>
+          <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">What outcomes does the partner have in releasing their solution on our {{information.Technology}} platform?</div>
         </div>
         <div class="ms-Grid-row">
           <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
@@ -80,7 +80,7 @@
           <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Duration of meeting:</div>
           <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
             <select ng-model="information.time">
-                <option ng-repeat="time in timeOptions">{{formCtrl.time}}</option>
+                <option ng-repeat="time in timeOptions">{{time}}</option>
               </select>
           </div>
         </div>
@@ -112,7 +112,7 @@
         <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Status:</div>
         <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
           <select ng-model="cloudInfor.status">
-              <option ng-repeat="status in cloudStatus">{{formCtrl.status}}</option>
+              <option ng-repeat="status in cloudStatus">{{status}}</option>
             </select>
         </div>
       </div>
@@ -120,7 +120,7 @@
         <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Provider:</div>
         <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
           <select ng-model="cloudInfor.provider">
-              <option ng-repeat="prov in cloudProv">{{formCtrl.prov}}</option>
+              <option ng-repeat="prov in cloudProv">{{prov}}</option>
             </select>
         </div>
       </div>
@@ -128,7 +128,7 @@
         <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Annual Consumption:</div>
         <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
           <select ng-model="cloudInfor.consumption">
-              <option ng-repeat="rate in consumption">{{formCtrl.rate}}</option>
+              <option ng-repeat="rate in consumption">{{rate}}</option>
             </select>
         </div>
       </div>
@@ -137,7 +137,7 @@
       </div>
       <div ng-repeat="(key, value) in workloads" class="ms-Grid=row">
         <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-          <input type="checkbox" name="load" ng-model="workloads[key]">{{formCtrl.key}}
+          <input type="checkbox" name="load" ng-model="workloads[key]">{{key}}
         </div>
       </div>
     </div>
