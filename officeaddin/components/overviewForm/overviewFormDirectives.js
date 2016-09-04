@@ -6,7 +6,7 @@
 
   app.directive("overviewForm", function() {
         return {
-            templateUrl: "../../poop.html"
+            templateUrl: "components/overviewForm/overviewFormView.html"
         };
     });   
 
