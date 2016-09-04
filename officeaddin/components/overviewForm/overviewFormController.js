@@ -37,7 +37,7 @@
 
   var app = angular.module("insightsOfficeApp");
 
-  app.controller("formController", formController);
+  app.controller("FormController", formController);
 
   function formController($scope) {
     info["Technology"] = "Intelligent Cloud";
