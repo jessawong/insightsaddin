@@ -82,7 +82,8 @@
     $scope.addRequest = function () {
       var cloudDetails = "";
       if ($scope.intelCloud) {
-        cloudDetails = "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry +
+        cloudDetails =
+          "<br/><h4>Industry/Vertical: </h4>" + $scope.cloudInfor.industry +
           "<br/><h4>Cloud Status: </h4>" + this.cloudInfor.status +
           "<br/><h4>Cloud Provider: </h4>" + $scope.cloudInfor.provider +
           "<br/><h4>Annual Consumption: </h4>" + this.cloudInfor.consumption;

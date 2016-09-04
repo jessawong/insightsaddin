@@ -9,5 +9,4 @@
             templateUrl: "components/overviewForm/overviewFormView.html"
         };
     });   
-
 })();
