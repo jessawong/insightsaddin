@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="insightsOfficeApp">
 
 <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge"  http-equiv="X-UA-Compatible" >
     <title></title>
 
     <link href="assets/css/Office.css" rel="stylesheet" type="text/css" />
@@ -14,6 +15,13 @@
     <link href="app.css" rel="stylesheet" type="text/css" />
     <link href="components/overviewForm/overviewForm.css" rel="stylesheet" type="text/css" />
 
+    
+
+</head>
+
+<body>
+    <div overview-form></div>
+
     <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" defer></script>
     <script type="text/javascript" src="//appsforoffice.microsoft.com/lib/1/hosted/office.js" defer></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js" defer></script>
@@ -22,11 +30,6 @@
     <script type="text/javascript" src="app.js" defer></script>
     <script type="text/javascript" src="components/overviewForm/overviewFormController.js" defer></script>
     <script type="text/javascript" src="components/overviewForm/overviewFormDirectives.js" defer></script>
-
-</head>
-
-<body ng-app="insightsOfficeApp">
-    <div overview-form></div>
 </body>
 
 </html>
