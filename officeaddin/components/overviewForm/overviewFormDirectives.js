@@ -2,7 +2,6 @@
 
   "use strict";
 
-  
   var app = angular.module("insightsOfficeApp", []);
 
   app.directive("overviewForm", function() {
