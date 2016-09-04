@@ -22,12 +22,15 @@
     <script type="text/javascript" src="assets/js/MicrosoftAjax.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="components/overviewForm/overviewFormController.js"></script>
-    <script type="text/javascript" src="components/overviewForm/overviewFormDirectives.js"></script>
+    <script type="text/javascript" src="components/overviewForm/overviewFormDirective.js"></script>
+    <script type="text/javascript" src="components/cloudForm/cloudFormDirective.js"></script>
 
 </head>
 
 <body ng-app="insightsOfficeApp">
-    <div overview-form></div>    
+    <div id="main" ng-controller="FormController as formCtrl">
+        <div overview-form></div>
+    </div>
 </body>
 
 </html>
