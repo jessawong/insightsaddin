@@ -2,8 +2,6 @@
 
   "use strict";
 
-  var app = angular.module("readHome", []);
-
   var info =
     {
       "te": "",
@@ -36,6 +34,8 @@
       info.te = Office.context.mailbox.userProfile.displayName;
     });
   };
+
+  var app = angular.module("insightsOfficeApp", []);
 
   app.controller("FormController", function ($scope) {
     info["Technology"] = "Intelligent Cloud";

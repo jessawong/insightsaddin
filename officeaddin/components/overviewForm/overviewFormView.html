@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-
-  <!-- Scrolls -->
-  <link href="../../assets/css/Office.css" rel="stylesheet" type="text/css" />
-  <link href="../../bower_components/microsoft.office.js/styles/OfficeThemes.css" rel="stylesheet" type="text/css" />
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet" />
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet" />
-  <link href="https://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css"
-  />
-  <link href="../app.css" rel="stylesheet" type="text/css" />
-  <link href="form.css" rel="stylesheet" type="text/css" />
-
-  <!-- Spells -->
-  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
-  <script src="//appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="../../assets/js/servicebusjssdk-1.2.js" />
-  <script src="../../assets/js/MicrosoftAjax.js"></script>
-  <script src="../app.js"></script>
-  <script src="form.js"></script>
-</head>
-
-<body ng-app="readHome">
   <div id="main" ng-controller="FormController as formCtrl">
     <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
     <form id="form" class="center" ng-submit="addRequest()">
@@ -181,6 +153,3 @@
       details of your steps to reproduce the error.
     </div>
   </div>
-</body>
-
-</html>
