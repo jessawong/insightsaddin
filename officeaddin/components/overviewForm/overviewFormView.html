@@ -1,7 +1,6 @@
 <i ng-show="showBack" class="ms-Icon ms-Icon--chevronThickLeft ms-fontColor-blue ms-font-l" ng-click="goBack()" aria-hidden="true"><span class="ms-fontColor-blue ms-font-l link">Back</span></i>
 <form id="form" class="center" ng-submit="addRequest()">
   <h2 class="ms-font-xl">{{information.Technology}}</h2>
-  <!-- main information -->
   <div ng-show="showMain">
     <div class="ms-Grid">
       <div class="ms-Grid-row">
@@ -100,53 +99,3 @@
   <div ng-click="cont()" ng-show="showArrow" id="cont">
     <i class="ms-Icon ms-Icon--arrowRight ms-fontColor-blue ms-font-xxl link" aria-hidden="true"></i>
   </div>
-  <div class="ms-Grid" ng-show="showCont">
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Industry/Vertical:</div>
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-        <input type="text" ng-model="cloudInfor.industry"></input>
-      </div>
-    </div>
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Status:</div>
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-        <select ng-model="cloudInfor.status">
-              <option ng-repeat="status in cloudStatus">{{status}}</option>
-            </select>
-      </div>
-    </div>
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Cloud Provider:</div>
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-        <select ng-model="cloudInfor.provider">
-              <option ng-repeat="prov in cloudProv">{{prov}}</option>
-            </select>
-      </div>
-    </div>
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md5 ms-u-lg3">Annual Consumption:</div>
-      <div class="ms-Grid-col ms-u-sm6 ms-u-md7 ms-u-lg9">
-        <select ng-model="cloudInfor.consumption">
-              <option ng-repeat="rate in consumption">{{rate}}</option>
-            </select>
-      </div>
-    </div>
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">Workloads:</div>
-    </div>
-    <div ng-repeat="(key, value) in workloads" class="ms-Grid=row">
-      <div class="ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12">
-        <input type="checkbox" name="load" ng-model="workloads[key]">{{key}}
-      </div>
-    </div>
-  </div>
-  <button ng-show="showSubmit" class="clearLeft ms-Button" type="submit">Submit</button>
-</form>
-<div id="submission" class="ms-fontWeight-semilight ms-fontColor-success">
-  <i class="ms-Icon ms-Icon--check"></i>Successfully submitted. Please send your email and someone from the V-Team will get
-  back to you within 24 hours.<br/>
-</div>
-<div id="error" class="ms-fontWeight-semilight ms-fontColor-error">
-  <i class="ms-Icon ms-Icon--alert2"></i> There was a problem processing your request. Contact jewon@microsoft.com with details
-  of your steps to reproduce the error.
-</div>

@@ -175,11 +175,10 @@
         } else {
           showStatus("#error");
         }
-        console.log(JSON.stringify(payload));
+        console.log("Complete! This payload is now in the database: " + JSON.stringify(payload));
       });
 
       $scope.showBack = false;
-      $scope.workloads = workLoads;
       $scope.skype = false;
     };
     $scope.canSkype = function () {
