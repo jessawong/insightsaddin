@@ -2,7 +2,7 @@
   "name": "insightsaddin",
   "version": "1.0.0",
   "description": "",
-  "main": "appcompose/app.js",
+  "main": "officeaddin/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
