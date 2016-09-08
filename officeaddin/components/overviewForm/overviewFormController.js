@@ -98,9 +98,9 @@
         workloadString = workloadString.substr(0, workloadString.length - 1) + "]";
       }
 
-      Office.context.mailbox.item.subject.setAsync("Intelligent Cloud TE Request");
+      Office.context.mailbox.item.subject.setAsync("Intelligent Cloud Partner Meeting Verification");
       Office.context.mailbox.item.body.setAsync(
-        "<h4>PBE: </h4>" + $scope.information.pbe +
+        "<h4>TE: </h4>" + info.te +
         "<h4>SI: </h4>" + $scope.information.si +
         "<h4>ISV: </h4>" + $scope.information.isv +
         "<h4>ISV Website: </h4>" + $scope.information.isvWebsite +
@@ -110,7 +110,7 @@
         "<br/><h4>Engagement Requested: </h4>" + $scope.information.engagement +
         "<br/><h4>Requested Date for Engagement:</h4>" + $scope.information.date +
         "<br/><h4>Duration of meeting:</h4>" + $scope.information.time +
-        "<br/><h4>Location:</h4>" + $scope.information.location +
+        "<br/><h4>Location:</h4>" + $scope.information.city + ", " + $scope.information.state +
         "<br/><h4>Meeting:</h4>" + $scope.information.meeting + cloudDetails +
         "<br/><h4>Workloads:</h4>" + workloadString, { coercionType: "html" }
       );
