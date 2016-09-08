@@ -174,6 +174,7 @@
           showStatus("#submission");
         } else {
           showStatus("#error");
+          console.log(messagingResult);
         }
         console.log("Complete! This payload is now in the database: " + JSON.stringify(payload));
       });
