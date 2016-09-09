@@ -43,12 +43,12 @@
     info["Technology"] = "Intelligent Cloud";
     $scope.technology = [{ "type": "Intelligent Cloud", "url": "../../images/cloud.png", "alias": "usdxrisvintelligentcloudteam@service.microsoft.com", "fadeUrl": "../../images/cloudOverlay.png", "intel": true }];
     $scope.engagement = ["Briefing", "Envisioning", "ADS", "Hackfest/PoC", "Other"];;
-    $scope.cloudInfor = { "status": "", "provider": "", "consumption": "", "workloads": "" };
+    $scope.cloudInfor = this.cloudInfo;
     $scope.cloudStatus = ["New", "Experimenting", "Hybrid", "Running"];
     $scope.cloudProv = ["None", "Azure", "AWS", "Google", "Other"];
     $scope.consumption = ["<25k", "25k-99k", "100k-499k", "500k+"];
     $scope.workloads = { "Advanced Analytics": false, "Big Data & SQL": false, "Compute": false, "Identity & Access Mgt": false, "IoT": false, "Media Solutions": false, "Mobility": false, "Networking": false, "OSS Platforms": false, "PaaS Services": false, "Storage & DR": false };
-    $scope.information = info;
+    $scope.information = this.info;
     $scope.timeOptions = ["30 min", "60 min", "90 min", "120 min", "2+ hours"];
     $scope.skype = false;
     $scope.intelCloud = true;
